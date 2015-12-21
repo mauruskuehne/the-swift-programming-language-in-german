@@ -1,2 +1,2 @@
-# A Swift Tour
+# Closures
 
