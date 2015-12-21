@@ -8,3 +8,7 @@ Swift fühlt sich für Objective-C-Entwickler vertraut an. Es knüpft an die Les
 
 Swift ist angenehm für neue Entwickler. Es ist die erste Programmiersprache auf Industristandard, die so ausdrucksvoll und unterhaltsam ist wie eine Skriptsprache. Es unterstützt Playgrounds, ein innovatives Feature, mit dem Programmierer mit Swift Code experimentieren und die Resulte sofort sehen können, ohne eine ganze App bauen und starten zu müssen.  
 
+Swift kombiniert das beste aus modernen Programmiersprachen mit der Weisheit der breiten Apple Ingenieurskultur. Der Compiler ist optimiert auf Performanz, die Sprache ist optimiert für die Entwicklung, beides ohne Komprisse eingehen zu müssen. Es ist so gestaltet, dass es von einem "Hallo Welt!" bis zu ganzen Betriebssystemen skaliert. All das macht Swift zu einer guten Investition für Entwickler und für Apple.  
+
+Swift ist ein fantastischer Weg, um iOS, OS X, watchOS und tvOS Apps zu schreiben und wird sich mit neuen Features und Fähigkeiten weiter entwickeln. Unsere Ziele für Swift sind anspruchsvoll. Wir können es kaum erwarten zu sehen, was du damit entwickelst.  
+
