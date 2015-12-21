@@ -6,3 +6,5 @@ Swift wurde über viele Jahre hinweg entwickelt. Apple hat das Fundament für Sw
 
 Swift fühlt sich für Objective-C-Entwickler vertraut an. Es knüpft an die Lesbarkeit der Objective-C Parameter an und an die Mächtigkeit von Objective-Cs dynamischem Objektmodell. Es ermöglicht den nahtlosen Zugang zu existierenden Cocoa Frameworks und Interoperabilität mit Objective-C Code. Auf einem bekannten Fundament aufbauend bringt Swift neue Features und führt die funktionalen und objektorientierten Teile der Sprache zusammen.  
 
+Swift ist angenehm für neue Entwickler. Es ist die erste Programmiersprache auf Industristandard, die so ausdrucksvoll und unterhaltsam ist wie eine Skriptsprache. Es unterstützt Playgrounds, ein innovatives Feature, mit dem Programmierer mit Swift Code experimentieren und die Resulte sofort sehen können, ohne eine ganze App bauen und starten zu müssen.  
+
