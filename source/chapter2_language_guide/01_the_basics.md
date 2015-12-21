@@ -1,2 +1,1 @@
-# The Basics
-
+# Die Grundlagen

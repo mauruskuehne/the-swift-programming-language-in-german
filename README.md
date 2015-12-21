@@ -6,9 +6,14 @@ Deutsche Version von 'The Swift Programming Language', in Anlehnung an [das chin
 
 ## Inhalt
 
-- About Swift
-- A Swift Tour
-- The Basics
+# Kapitel 1
+
+- [Über Swift](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter1_welcome_to_swift/01_about_swift.md)
+- [Eine Swift Tour](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter1_welcome_to_swift/02_a_swift_tour.md)
+
+# Kapitel 2
+
+- [Die Grundlagen](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter2_language_guide/01_the_basics.md)
 - Basic Operators
 - Strings and Characters
 - Collection Types
