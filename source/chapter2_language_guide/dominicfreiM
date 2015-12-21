@@ -1,2 +1,0 @@
-# A Swift Tour
-
