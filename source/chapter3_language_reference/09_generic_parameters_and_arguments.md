@@ -1,2 +1,1 @@
-# A Swift Tour
-
+# Generische Parameter und Argumente
