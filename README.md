@@ -1,6 +1,6 @@
 # The Swift Programming Language (German)
 
-Deutsche Version von 'The Swift Programming Language', in Anlehnung an [das chinesische Übersetzungsprojekt](https://github.com/numbbbbb/the-swift-programming-language-in-chinese/blob/gh-pages/README.md)
+Deutsche Version von 'The Swift Programming Language', in Anlehnung an [das chinesische Übersetzungsprojekt](https://github.com/numbbbbb/the-swift-programming-language-in-chinese/blob/gh-pages/README.md), als Beitrag zum [Aufruf von Apple](https://swift.org/documentation/#the-swift-programming-language), die Dokumentation noch weiter zu verbreiten.
 
 [Quelle: Englische Dokumentation von Apple](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/index.html#//apple_ref/doc/uid/TP40014097-CH3-ID0)
 
