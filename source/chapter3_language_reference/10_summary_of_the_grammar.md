@@ -1,2 +1,1 @@
-# A Swift Tour
-
+# Zusammenfassung der Grammatik
