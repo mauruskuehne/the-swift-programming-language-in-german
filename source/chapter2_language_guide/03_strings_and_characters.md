@@ -1,2 +1,1 @@
-# A Swift Tour
-
+# Strings und Characters
