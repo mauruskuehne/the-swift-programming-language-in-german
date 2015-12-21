@@ -6,12 +6,12 @@ Quelle: [Englische Dokumentation von Apple](https://developer.apple.com/library/
 
 ## Inhalt
 
-# Kapitel 1
+### Kapitel 1
 
 - [Über Swift](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter1_welcome_to_swift/01_about_swift.md)
 - [Eine Swift Tour](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter1_welcome_to_swift/02_a_swift_tour.md)
 
-# Kapitel 2
+### Kapitel 2
 
 - [Die Grundlagen](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter2_language_guide/01_the_basics.md)
 - [Die Basisoperationen](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter2_language_guide/02_basic_operations.md)
@@ -39,7 +39,7 @@ Quelle: [Englische Dokumentation von Apple](https://developer.apple.com/library/
 - [Sichtbarkeit](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter2_language_guide/24_access_control.md)
 - [Erweiterte Optionen](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter2_language_guide/25_advanced_options.md)
  
-# Kapitel 3
+### Kapitel 3
 
 - [Über die Dokumentation](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter3_language_reference/01_about_the_language_reference.md)
 - [Grammatik](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter3_language_reference/02_lexical_structure.md)
@@ -52,7 +52,7 @@ Quelle: [Englische Dokumentation von Apple](https://developer.apple.com/library/
 - [Generische Parameter und Argumente](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter3_language_reference/09_generic_parameters_and_arguments.md)
 - [Zusammenfassung der Grammatik](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter3_language_reference/10_summary_of_the_grammar.md)
  
-# Kapitel 4
+### Kapitel 4
 
 - [Dokumentenhistorie](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter4_revision_history/01_document_revision_history.md)
 
