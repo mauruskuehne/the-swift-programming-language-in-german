@@ -13,3 +13,8 @@ Für die Notation der Grammatik von Swift gibt es einige Konventionen:
 - Alternativen werden mit einer Pipe (```|```) voneinander getrennt. Wenn Alternativen zu lang oder komplex sind, werden sie voneinander getrennt auf mehrere Zeilen aufgeteilt.
 - In manchen Fällen wird ein normaler Font genutzt, um die rechte Seite einer Regel zu beschreiben.
 - Optionale Nonterminale und Termine werden mit einem tiefer gesetzten ```opt``` gekenntzeichnet.
+
+Als Beispiel wird im Folgenden die Grammatik für den Getter-Setter-Block gezeigt:
+
+> GRAMMATIK EINES GETTER-SETTER-BLOCKS  
+> getter-setter-block → { getter-clause setter-clause<sub>opt</sub> }
