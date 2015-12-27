@@ -246,3 +246,49 @@ let nochEinPi = 3 + 0.14159
 ```
 
 Der Literalwert ```3``` an sich hat keinen expliziten Typ. Der passende Typ ```Double``` wird daraus abgeleitet, dass auch eine Fliesskommazahl in der Addition vorhanden ist.
+
+### Numerische Literale
+
+Ganzzahlige Literale können auf verschiedene Arten geschrieben werden:
+
+* Als _dezimale_ Zahl ohne Präfix
+* Als _binäre_ Zahl mit dem Präfix ```0b```
+* Als _oktale_ Zahl mit dem Präfix ```0o```
+* Als _hexadezimale_ Zahl mit dem Präfix ```0x```
+
+Alle Literale in unterem Beispiel haben den dezimalen Wert ```17```:
+
+```Swift
+let dezimalZahl = 17
+let binaereZahl = 0b10001      // 17 in binärer Schreibweise
+let oktaleZahl = 0o21          // 17 in oktaler Schreibweise
+let hexadezimaleZahl = 0x11    // 17 in hexadezimaler Schreibweise
+```
+
+Fliesskommazahlen können entweder dezimal (ohne Präfix) oder hexadezimal (mit dem Präfix ```0x```) geschrieben werden. Sie müssen immer auf beiden Seiten des Dezimalpunktes eine (hexadezimale) Zahl haben. Dezimale Fliesskommazahlen können optional auch einen _Exponent_ haben, der durch ein grosses oder kleines ```e``` angegeben wird. Hexadezimale Fliesskommazahlen haben immer einen Exponent, angegeben durch ein grosses oder kleines ```p```.
+
+Für Dezimalzahlen mit einem Exponent ```exp``` wird die Basis mit 10<sup>exp</sup> multipliziert:
+
+* ```1.25e2``` entspricht 1.25 x 10<sup>2</sup> oder ```125.0```
+* ```1.25e-2``` entspricht 1.25 x 10<sup>-2</sup> oder ```0.0125```
+
+Für Hexadezimalzahlen mit einem Exponent ```exp``` wird die Basis mit 2<sup>exp</sup> multipliziert:
+
+* ```0xFp2``` entspricht 15 x 2<sup>2</sup> oder ```60```
+* ```0xFp-2``` entspricht 15 x 2<sup>-2</sup> oder ```3.75```
+
+Alle Fliesskommazahl-Literale in unterem Beispiel haben den Dezimalwert ```12.1875```:
+
+```Swift
+let dezimalDouble = 12.1875
+let exponentDouble = 1.21875e1
+let hexadezimalDouble = 0xC.3p0
+```
+
+Numerische Literale können zusätzlich formatiert werden, damit sie leichter lesbar sind. Sowohl Ganzahl- als auch Fliesskommazahl-Werte können mit voranstehenden Nullen aufgefüllt werden oder mit Unterstrichen gruppiert werden. Keine der beiden Formatierungsvarianten verändert den effektiven Wert des Literals:
+
+```Swift
+let voranstehendeNullenDouble = 000123.456
+let eineMillion = 1_000_000
+let bisschenMehrAlsEineMillion = 1_000_000.000_000_1
+```
