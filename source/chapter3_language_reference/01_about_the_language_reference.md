@@ -17,7 +17,10 @@ Für die Notation der Grammatik von Swift gibt es einige Konventionen:
 Als Beispiel wird im Folgenden die Grammatik für den ```Getter-Setter-Block``` gezeigt:
 
 > GRAMMATIK EINES GETTER-SETTER-BLOCKS  
-> getter-setter-block → { getter-clause setter-clause<sub>opt</sub> } | { getter-clause setter-clause }
+> getter-setter-block → { getter-clause setter-clause<sub>opt</sub> } | { setter-clause getter-clause }
 
 Diese Definition zeigt, dass ein ```getter-setter-Block``` aus einem ```getter``` und einem optionalen ```setter``` besteht, die in geschweifte Klammern zusammen gefasst werden *oder* aus einem ```setter``` gefolgt von einem ```getter```, ebenfalls in geschweifte Klammern eingeschlossen. Diese Regel ist identisch zu den beiden folgenden Regeln, bei die beiden Alternativen separiert dargestellt sind:  
 
+> GRAMMATIK EINES GETTER-SETTER-BLOCKS  
+> getter-setter-block → { getter-clause setter-clause<sub>opt</sub> }
+> getter-setter-block → { setter-clause getter-clause }
