@@ -161,3 +161,39 @@ let katze = "🐱"; print(katze)
 // Gibt "🐱" aus
 ```
 
+### Integer
+
+Integer sind ganze Zahlen ohne Bruchanteil, also zum Beispiel ```42``` oder ```-23```. Integer sind entweder vorzeichenbehaftet (positiv, null oder negativ) oder vorzeichenlos (positiv oder null).
+
+Swift bietet Integer mit oder ohne Vorzeichen in den Grössen 8, 16, 32 oder 64 Bit. Diese Integer haben ähnliche Namenskonventionen wie in C, ein vorzeichenloser 8-Bit Integer ist also vom Typ ```UInt8```, ein 32-Bit Integer mit Vorzeichen ist vom Typ ```Int32```. Wie alle Typen in Swift beginnen die Typnamen mit einem Grossbuchstaben.
+
+#### Grenzwerte der Integer 
+
+Du kannst auf die Grenzwerte eines Integer-Types über die Eigenschaften ```min``` und ```max``` zugreifen:
+
+```Swift
+let minWert = UInt8.min // minWert entspricht 0 und ist vom Typ UInt8
+let maxWert = UInt8.max // maxWert entspricht 255 und ist vom Typ UInt8
+```
+
+Die Werte dieser Eigenschaften sind immer vom passenden numerischen Typ (also z.B. ```UInt8``` im Beispiel oben). Die Eigenschaften können deshalb in Ausdrücken direkt mit anderen Werten des gleichen Typs verwendet werden.
+
+#### Int
+
+In den meisten Fällen musst du keine spezifische Integergrösse auswählen. Swift bietet einen zusätzlichen Integer-Typ, ```Int```. ```Int``` hat immer die gleiche Grösse wie die native Busbreite der Plattform.
+
+* Auf einer 32-Bit Plattform hat ```Int``` die gleiche Grösse wie ```Int32```
+* Auf einer 64-Bit Plattform hat ```Int``` die gleiche Grösse wie ```Int64```
+
+Sofern du keine spezifischen Integergrössen benötigst, solltest du immer ```Int``` für ganzzahlige Werte in deinem Code verwenden. Dies hilft dabei, den Code konsistent und kompatibel zu halten. Selbst auf 32-Bit Plattformen können mit ```Int``` alle Werte zwischen ```-2'147'483'648 ``` und ```2'147'483'647``` gespeichert werden. Dies sollte für die meisten Fälle reichen.
+
+#### UInt
+
+Zusätzlich bietet Swift mit ```UInt``` weiteren vorzeichenlosen Integer-Typ. Dieser ist ebenfalls immer gleich gross wie die native Busbreite der Plattform.
+
+
+* Auf einer 32-Bit Plattform hat ```UInt``` die gleiche Grösse wie ```UInt32```
+* Auf einer 64-Bit Plattform hat ```UInt``` die gleiche Grösse wie ```UInt64```
+
+>Hinweis: 
+Verwende ```UInt``` nur, wenn du wirklich einen vorzeichenlosen Integer-Typ von der Grösse der nativen Busbreite benötigst. Wenn dies nicht der Fall ist, solltest du ```Int``` verwenden. Dies auch wenn du weisst, dass du darin keine negativen Werte speichern wirst. Konsistente Verwendung von ```Int``` für ganzzahlige Werte macht deinen Code kompatibler, benötigt keine Konvertierungen zwischen den Integer-Typen und ermöglicht die häufigere Verwendung der Typinferenz (siehe <a href="TO BE DEFINED">Typsicherheit und Typinferenz</a>).
