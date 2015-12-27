@@ -97,7 +97,7 @@ freundlichesWillkommen = "Bonjour!"
 // freundlichesWillkommen hat neu den Wert "Bonjour!"
 ```
 
-Im gegensatz zu Variablen kann der Wert von Konstanten nicht mehr verändert werden, nachdem ihr einmal ein Wert zugewiesen wurde. Wird trotzdem versucht der Wert einer Konstante zu verändern, führt dies zu einem Kompilierfehler:
+Im Gegensatz zu Variablen kann der Wert von Konstanten nicht mehr verändert werden, nachdem ihr einmal ein Wert zugewiesen wurde. Wird trotzdem versucht der Wert einer Konstante zu verändern, führt dies zu einem Kompilierfehler:
 
 ```Swift
 let sprachName = "Swift"
@@ -124,4 +124,40 @@ print("Der aktuelle Wert von freundlichesWillkommen ist \(freundlichesWillkommen
 ```
 
 >Hinweis: Weitere Informationen zur Verwendung der Stringinterpolation findest du unter <a href="TO BE DEFINED">String Interpolation</a>.
+
+### Kommentare
+
+Mit Kommentaren kannst du Texte in den Code schreiben, welche nicht ausgeführt werden. So können zum Beispiel Notizen oder Erinnerungen direkt zum Code hinzugefügt werden. Kommentare werden beim kompilieren vom Swift-Compiler ignoriert.
+
+Kommentare in Swift sind sehr ähnlich wie in C. Einzeilige Kommentare beginnen mit zwei Schrägstrichen (```//```):
+
+```Swift
+// Das ist ein Kommentar
+```
+
+Mehrzeilige Kommentare beginnen mit einem Schrägstrich und einem Sternchen (```/*```) und enden mit einem Sternchen und einem Schrägstrich (```*/```):
+
+```Swift
+/* Dies ist ebenfalls ein Kommentar,
+der aber über mehrere Zeilen verteilt ist */
+```
+
+Im Gegensatz zu C können mehrzeilige Kommentare in Swift verschachtelt werden. Du kannst die Kommentare verschachteln, indem du einen mehrzeiligen Kommentar beginnst und dann einen zweiten mehrzeiligen Kommentar innerhalb des ersten Kommentares beginnst. Es wird dann zuerst der zweite Kommentar geschlossen, anschliessend der erste Kommentar:
+
+```Swift
+/* dies ist er Anfang des ersten mehrzeiligen Kommentars
+/* dies ist der zweite mehrzeilige Kommentar */
+dies ist das Ende des ersten mehrzeiligen Kommentars */
+```
+
+Verschachtelte mehrzeilige Kommentare ermöglichen es, grosse Codeabschnitte schnell und einfach auszukommentieren. Selbst dann, wenn der Code bereits mehrzeilige Kommentare beinhaltet.
+
+### Semikolons
+
+Im Gegensatz zu anderen Sprachen benötigt Swift kein Semikolon am Ende eines Befehls. Du kannst es aber hinzufügen, wenn du möchtest. Semikolons werden zwingend benötigt, wenn du mehrere, separate Befehle auf einer Zeile schreiben möchtest:
+
+```Swift
+let katze = "🐱"; print(katze)
+// Gibt "🐱" aus
+```
 
