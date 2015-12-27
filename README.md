@@ -8,12 +8,12 @@ Quelle: [Englische Dokumentation von Apple](https://developer.apple.com/library/
 
 ### Kapitel 1
 
-- [Über Swift](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter1_welcome_to_swift/01_about_swift.md)
+- [Über Swift](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter1_welcome_to_swift/01_about_swift.md) (([Dominic Frei](https://github.com/DominicFrei)))
 - [Eine Swift Tour](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter1_welcome_to_swift/02_a_swift_tour.md)
 
 ### Kapitel 2
 
-- [Die Grundlagen](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter2_language_guide/01_the_basics.md)
+- [Die Grundlagen](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter2_language_guide/01_the_basics.md) ([mauruskuehne](https://github.com/mauruskuehne))
 - [Die Basisoperationen](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter2_language_guide/02_basic_operations.md)
 - [Strings und Characters](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter2_language_guide/03_strings_and_characters.md)
 - [Kollektionen](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter2_language_guide/04_collection_types.md)
