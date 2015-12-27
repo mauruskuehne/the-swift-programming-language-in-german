@@ -105,3 +105,23 @@ sprachName = "Swift++"
 // Dies ergibt einen Kompilierfehler, sprachName darf nicht verändert werden
 ```
 
+### Ausgabe von Konstanten und Variablen
+
+Du kannst den aktuellen Wert von Konstanten oder Variablen mit der Funktion ```print(_:separator:terminator:)``` ausgeben:
+
+```Swift
+print(freundlichesWillkommen)
+// gibt "Bonjour!" aus
+```
+
+Die Funktion ```print(_:separator:terminator:)``` ist eine globale Funktion welche einen oder mehrere Werte je nach Situation in die passende Ausgabe schreibt. In Xcode schreibt die ```print(_:separator:terminator:)``` Funktion beispielsweise in das Konsolen-Ausgabefenster. Die Parameter ```separator``` und ```terminator``` haben Standardwerte, du kannst sie also beim Aufruf der Funktion weglassen. Standardmässig beendet die Funktion die Ausgabe mit einem Zeilenumbruch. Um einen Wert ohne Zeilenumbruch auszugeben, kann als ```terminator```-Wert einfach ein leeres ```String```-Element übergeben werden (Beispiel: ```print(einWert, terminator: "")```). Weitere Informationen zu Standardwerten kannst du unter <a href="TO BE DEFINED">Standardwerte für Parameter</a> finden.
+
+Swift verwendet _Stringinterpolation_ um die Namen von Konstanten und Variablen als Platzhalter in einem längeren ```String``` zu verwenden. Swift ersetzt diese Platzhalter mit dem aktuellen Wert der Variable oder Konstante. Umschliesse den Namen in runden Klammern und setze ein Backslash vor die öffnende Klammer:
+
+```Swift
+print("Der aktuelle Wert von freundlichesWillkommen ist \(freundlichesWillkommen)")
+// Ausgabe: "Der aktuelle Wert von freundlichesWillkommen ist Bonjour!"
+```
+
+>Hinweis: Weitere Informationen zur Verwendung der Stringinterpolation findest du unter <a href="TO BE DEFINED">String Interpolation</a>.
+
