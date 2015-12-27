@@ -197,3 +197,16 @@ Zusätzlich bietet Swift mit ```UInt``` weiteren vorzeichenlosen Integer-Typ. Di
 
 >Hinweis: 
 Verwende ```UInt``` nur, wenn du wirklich einen vorzeichenlosen Integer-Typ von der Grösse der nativen Busbreite benötigst. Wenn dies nicht der Fall ist, solltest du ```Int``` verwenden. Dies auch wenn du weisst, dass du darin keine negativen Werte speichern wirst. Konsistente Verwendung von ```Int``` für ganzzahlige Werte macht deinen Code kompatibler, benötigt keine Konvertierungen zwischen den Integer-Typen und ermöglicht die häufigere Verwendung der Typinferenz (siehe <a href="TO BE DEFINED">Typsicherheit und Typinferenz</a>).
+
+### Fliesskommazahlen
+
+_Fliesskommazahlen_ sind Zahlen mit einem Bruchanteil, also zum Beispiel ```3.14159```, ```0.1``` oder ```-273.15```.
+
+Fliesskommazahlen-Typen können einen viel grösseren Zahlenbereich abdecken als Integer-Typen. Zudem können sie Zahlen beinhalten die viel grösser oder kleiner sind als in einem ```Int```.  Swift bietet zwei Typen für vorzeichenbehaftete Fliesskommazahlen:
+
+* ```Double``` repräsentiert eine 64-Bit Fliesskommazahl
+* ```Float``` repräsentiert eine 32-Bit Fliesskommazahl
+
+>Hinweis:
+```Double``` hat eine Genauigkeit von mindestens 15 Dezimalstellen, die Genauigkeit von ```Float``` kann unter Umständen bei nur 6 Dezimalstellen liegen. Welchen Typ du verwenden sollst hängt von der Art und der Grösse der Werte ab mit denen du arbeitest. In Situationen wo beide Typen verwendet werden könnten, solltest du ```Double``` verwenden.
+
