@@ -8,7 +8,7 @@ Quelle: [Englische Dokumentation von Apple](https://developer.apple.com/library/
 
 ### Kapitel 1
 
-- [Über Swift](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter1_welcome_to_swift/01_about_swift.md) (([Dominic Frei](https://github.com/DominicFrei)))
+- [Über Swift](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter1_welcome_to_swift/01_about_swift.md) ([Dominic Frei](https://github.com/DominicFrei))
 - [Eine Swift Tour](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter1_welcome_to_swift/02_a_swift_tour.md)
 
 ### Kapitel 2
