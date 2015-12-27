@@ -17,5 +17,5 @@ Für die Notation der Grammatik von Swift gibt es einige Konventionen:
 Als Beispiel wird im Folgenden die Grammatik für den Getter-Setter-Block gezeigt:
 
 > GRAMMATIK EINES GETTER-SETTER-BLOCKS  
-> getter-setter-block → { getter-clause setter-clause<sub>opt</sub> } | { getter-clause setter-clause<sub>opt</sub> }
+> getter-setter-block → { getter-clause setter-clause<sub>opt</sub> } | { getter-clause setter-clause }
 
