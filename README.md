@@ -41,7 +41,7 @@ Quelle: [Englische Dokumentation von Apple](https://developer.apple.com/library/
  
 ### Kapitel 3
 
-- [Über die Dokumentation](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter3_language_reference/01_about_the_language_reference.md)
+- [Über die Dokumentation](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter3_language_reference/01_about_the_language_reference.md) ([Dominic Frei](https://github.com/DominicFrei))
 - [Grammatik](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter3_language_reference/02_lexical_structure.md)
 - [Typen](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter3_language_reference/03_types.md)
 - [Ausdrücke](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter3_language_reference/04_expressions.md)
