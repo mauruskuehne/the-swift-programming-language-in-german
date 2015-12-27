@@ -292,3 +292,35 @@ let voranstehendeNullenDouble = 000123.456
 let eineMillion = 1_000_000
 let bisschenMehrAlsEineMillion = 1_000_000.000_000_1
 ```
+
+### Numerische Typkonvertierungen
+
+Wenn möglich solltest du immer den Typ ```Int``` für all deine ganzzahligen Variablen und Konstanten verwenden, selbst wenn du weisst, dass darin nie negative Zahlen vorkommen werden. Wenn du den Standardtyp verwendest, sind die Variablen und Konstanten direkt kompatibel und sie entsprechen dem abgeleiteten Typ der Integer-Literalwerte.
+
+Verwende die anderen Integer-Typen nur, wenn du sie wirklich benötigst. Mögliche Gründe dafür wären externe Quellen, Performanceoptimierungen, Speicherverbrauch oder andere Optimierungen. Wenn du in diesen Fällen die Typen mit expliziten Grössen verwendest, kannst du mögliche Überläufe einfacher erkennen und du hast implizit die Eigenschaft der Daten dokumentiert.
+
+#### Konvertieren von Ganzzahlen
+
+Der speicherbare Zahlenbereich in einer Konstante oder Variable ist bei jedem numerischen Typ unterschiedlich. Eine ```Int8``` Konstante oder Variable kann Zahlen zwischen ```-128``` und ```127``` enthalten, wohingegen eine ```UInt8``` Konstante oder Variable die Zahlen von ```0``` bis ```255``` speichern kann. Versuchst du einer Konstante oder Variable einen Wert ausserhalb des möglichen Zahlenbereichs zuzuweisen, führt dies zu einem Kompilierfehler:
+
+```Swift
+let kannNichtNegativSein: UInt8 = -1
+// UInt8 kann keine negativen Zahlen speichern, die Zeile führt deshalb zu einem Kompilierfehler
+let zuGross : Int8 = Int8.max + 1
+// Int8 kann keine Zahlen speichern die grösser sind als sein Maximalwert, 
+// dies führt ebenfalls zu einem Kompilierfehler
+```
+
+Da jeder numerische Typ unterschiedliche Zahlenbereiche speichern kann, musst du bei jeder Konversion zwischen zwei numerischen Typen explizit zustimmen. Dieses Vorgehen verhindert versteckte Konvertierungsfehler und hilft dir die gewünschte Konvertierung explizit im Code anzugeben.
+
+Um von einem numerischen Typ in einen anderen Typ zu konvertieren, musst du eine neue Zahl des gewünschten Typs mit dem existierenden Wert initialisieren. Im Beispiel ist die Konstante ```zweitausend``` vom Typs ```UInt16``` und die Konstante ```eins``` vom Typ ```UInt8```. Sie können nicht direkt addiert werden, da sie nicht den gleichen Typ haben. Stattdessen wird im Beispiel ein neuer ```UInt16``` Wert mit dem Wert aus ```eins``` initialisiert durch den Aufruf von ```UInt16(eins)```. Dieser neue ```UInt16``` wird dann anstelle des Originals (```eins```) verwendet.
+
+```Swift
+let zweitausend: UInt16 = 2_000
+let eins: UInt8 = 1
+let zweitausendUndEins = zweitausend + UInt16(eins)
+```
+
+Da nun beide Seiten der Addition vom Typ ```UInt16``` sind, kann die Addition durchgeführt werden. Der abgeleitete Typ der Konstanten ```zweitausendUndEins``` ist ebenfalls ```UInt16```, da es sich dabei um die Summe von zwei ```UInt16``` Werten handelt.
+
+```EinTyp(mitInitialWert)``` ist der übliche Weg um einen Swift-Typ zu initialisieren und einen Initialwert zu übergeben. Hinter den Kulissen hat ```UInt16``` eigentlich einen Initialisierer, der einen ```UInt8``` entgegen nimmt. Dieser wird verwendet um aus dem bestehenden ```UInt8``` einen neuen  ```UInt16``` zu erstellen. Es kann hier nicht jeder Typ übergeben werden, es muss ein Typ sein, für den ```UInt16``` einen Initialisierer bereitstellt. Wie bestehende Typen  (sowie eigene Typdefinitionen) um neue Initialisierer erweitert werden können ist unter <a href="TO BE DEFINED">Extensions</a> beschrieben.
