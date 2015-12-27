@@ -210,3 +210,39 @@ Fliesskommazahlen-Typen können einen viel grösseren Zahlenbereich abdecken als
 >Hinweis:
 ```Double``` hat eine Genauigkeit von mindestens 15 Dezimalstellen, die Genauigkeit von ```Float``` kann unter Umständen bei nur 6 Dezimalstellen liegen. Welchen Typ du verwenden sollst hängt von der Art und der Grösse der Werte ab mit denen du arbeitest. In Situationen wo beide Typen verwendet werden könnten, solltest du ```Double``` verwenden.
 
+### Typsicherheit und Typinferenz
+
+Swift ist eine _typsichere_ Programmiersprache. Eine typsichere Sprache unterstützt dich dabei, klar zu definieren, mit was für Typen dein Code arbeiten kann. Wenn ein Teil deines Codes einen ```String``` erwartet, kannst du ihm nicht aus Versehen einen ```Int``` übergeben.
+
+Da Swift typsicher ist, werden beim kompilieren _typprüfungen_ durchgeführt und alle unpassenden Typen als Fehler markiert. Dies ermöglicht es dir schon früh im Entwicklungsprozess Fehler zu finden und zu korrigieren.
+
+Typprüfungen helfen dir Fehler zu vermeiden, wenn du mit Werten verschiedener Typen arbeitest. Dies bedeutet aber nicht, dass du für alle deine Variablen und Konstanten einen Typ bei der Deklaration angeben musst. Wenn du keinen Typ angibst, ermittelt Swift mittels _Typinferenz_ den passenden Typ für die Variable oder Konstante. Typinferenz ermöglicht es dem Compiler den Typ eines Ausdruckes automatisch anhand der von dir angegebenen Werte zu ermitteln.
+
+Dank der Typinferenz benötigt Swift viel weniger Typdeklarationen als andere Sprachen wie zum Beispiel C oder Objective-C. Konstanten und Variablen sind immer noch explizit typisiert, aber du musst den Typ nicht mehr selber angeben.
+
+Die Typinferenz ist besonders hilfreich bei der Deklaration von Konstanten oder Variablen mit einem Initialwert. Dies wird oft durch die Zuweisung eines _Literalwertes_ (oder einfach nur _Literal_) zur Konstante oder Variable bei der Deklaration erreicht. (Ein Literalwert ist ein Wert der direkt in deinem Code steht, wie ```42``` und ```3.14159``` in den untenstehenden Beispielen).
+
+Wenn du zum Beispiel ohne weitere Typangabe den Literalwert ```42``` einer neuen Konstante zuweist, leitet Swift daraus ab, dass die Konstante vom Typ ```Int``` soll. 
+
+```Swift
+let sinnDesLeben = 42
+// Der abgeleitete Typ von sinnDesLeben ist Int
+```
+
+Genauso kannst du bei einem Fliesskommazahl-Literal den Typ weglassen. Swift leitet daraus automatisch ab, dass du ein ```Double``` deklarieren wolltest:
+
+```Swift
+let pi = 3.14159
+// Der abgeleitete Typ von pi ist Double
+```
+
+Swift wählt bei Fliesskommazahlen immer ```Double``` (anstelle von ```Float```).
+
+Wenn du nun ein Integer-Literal und ein Fliesskommazahl-Literal in einem Ausdruck kombinierst, wird daraus der Typ ```Double``` abgeleitet.
+
+```Swift
+let nochEinPi = 3 + 0.14159
+// Der abgeleitete Typ von nochEinPi ist ebenfalls Double
+```
+
+Der Literalwert ```3``` an sich hat keinen expliziten Typ. Der passende Typ ```Double``` wird daraus abgeleitet, dass auch eine Fliesskommazahl in der Addition vorhanden ist.
