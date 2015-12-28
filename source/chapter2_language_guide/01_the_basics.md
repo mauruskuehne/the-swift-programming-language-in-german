@@ -323,4 +323,32 @@ let zweitausendUndEins = zweitausend + UInt16(eins)
 
 Da nun beide Seiten der Addition vom Typ ```UInt16``` sind, kann die Addition durchgeführt werden. Der abgeleitete Typ der Konstanten ```zweitausendUndEins``` ist ebenfalls ```UInt16```, da es sich dabei um die Summe von zwei ```UInt16``` Werten handelt.
 
-```EinTyp(mitInitialWert)``` ist der übliche Weg um einen Swift-Typ zu initialisieren und einen Initialwert zu übergeben. Hinter den Kulissen hat ```UInt16``` eigentlich einen Initialisierer, der einen ```UInt8``` entgegen nimmt. Dieser wird verwendet um aus dem bestehenden ```UInt8``` einen neuen  ```UInt16``` zu erstellen. Es kann hier nicht jeder Typ übergeben werden, es muss ein Typ sein, für den ```UInt16``` einen Initialisierer bereitstellt. Wie bestehende Typen  (sowie eigene Typdefinitionen) um neue Initialisierer erweitert werden können ist unter <a href="TO BE DEFINED">Extensions</a> beschrieben.
+```EinTyp(mitInitialWert)``` ist der übliche Weg um einen Swift-Typ zu initialisieren und einen Initialwert zu übergeben. Hinter den Kulissen hat ```UInt16``` eigentlich einen Initialisierer, der einen ```UInt8``` entgegen nimmt. Dieser wird verwendet um aus dem bestehenden ```UInt8``` einen neuen  ```UInt16``` zu erstellen. Es kann hier nicht irgend ein Typ übergeben werden. Es muss ein Typ sein, für den ```UInt16``` einen Initialisierer bereitstellt. Wie bestehende Typen  (sowie eigene Typdefinitionen) um neue Initialisierer erweitert werden können ist unter <a href="TO BE DEFINED">Extensions</a> beschrieben.
+
+#### Konvertieren von Ganzzahlen und Fliesskommazahlen
+
+Die Konvertierung von Ganzzahlen zu Fliesskommazahlen muss explizit angegeben werden:
+
+```Swift
+let drei = 3
+let punktEinsVierEinsFuenfNeun = 0.14159
+let pi = Double(drei) + punktEinsVierEinsFuenfNeun
+// pi entspricht 3.14159 und hat den abgeleiteten Typ Double
+```
+
+In diesem Beispiel wurde die Konstante ```drei``` verwendet, um einen neuen Wert vom Typ ```Double``` zu erstellen. So sind beide Seiten der Addition vom gleichen Typ. Ohne diese Konvertierung kann die Addition nicht durchgeführt werden.
+
+Auch die Konvertierung von Fliesskommazahlen zu Ganzzahlen muss explizit angegeben werden. Ganzzahltypen können mit ```Double``` oder ```Float``` Werten initialisiert werden:
+
+```Swift
+let integerPi = Int(pi)
+// integerPi hat den Wert 3 und ist vom Typ Int
+```
+
+Bei dieser Art der Konvertierung in Ganzzahlen werden die Nachkommastellen der Fliesskommazahlen abgeschnitten. Das bedeutet, aus ```4.75``` wird ```4``` und aus ```-3.9``` wird ```-3```.
+
+> HINWEIS
+> Die Kombinationsregeln für numerische Konstanten und Variablen unterscheiden sich von denen für numerische Literale. Das Literal ```3``` kann direkt mit dem Literal ```0.14159``` addiert werden, da die Literale keinen expliziten Typ haben. Ihr Typ wird erst bei der Evaluation durch den Compiler festgelegt.
+
+
+
