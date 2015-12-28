@@ -413,3 +413,66 @@ if i == 1 {
 Das Resultat des Vergleichs ```i == 1``` ist vom Typ ```Bool```, deshalb entstehen keine Probleme bei der Überprüfung der Typen. Vergleiche wie ```i == 1``` werden unter [Basisoperationen](TO BE DEFINED) erläutert.
 
 Genauso wie in den anderen Beispielen zu Swifts Typsicherheit, verhindert dieses Verhalten ungewollte Fehler. Sie sorgt zudem dafür, dass die Absicht hinter einem Codeabschnitt immer klar ersichtlich ist.
+
+## Tupel
+
+Ein Tupel gruppiert mehrere Werte in einen einzelnen zusammengesetzten Wert. Die Werte eines Tupels können von einem beliebigen Typ sein. Die Werte innerhalb eines Tupels müssen nicht alle den gleichen Typ haben.
+
+In nachfolgendem Beispiel ist ```(404, "Not Found")``` ein Tupel, welcher einen _HTTP Statuscode_ beschreibt. ein HTTP Statuscode ist ein spezieller Wert, welcher vom Webserver zurückgegeben wird, wenn du eine Webseite anforderst. Der Statuscode ```404 Not Found``` wird zurückgegeben, wenn die Webseite nicht existiert.
+
+```Swift
+let http404Fehler = (404, "Not Found")
+// http404Fehler ist vom Typ (Int, String) und entspricht (404, "Not Found")
+```
+
+Der Tupel ```(404, "Not Found")``` gruppiert einen ```Int``` und einen ```String```. Der HTTP-Statuscode hat so zwei separate Werte, eine Nummer und einen von menschen lesbarer Text. Der Tupel kann beschrieben werden als "ein Tupel vom Typ ```(Int, String)```".
+
+Du kannst Tupel aus allen möglichen Typkonstellationen erstellen und sie können so viele unterschiedliche Typen beinhalten wie du möchtest. Es hindert dich nichts daran, einen Tupel vom Typ ```(Int, Int, Int)```, ```(String, Bool)``` oder irgend einer anderen Kombination zu erstellen.
+
+Du kannst Tupel wieder in separate Variablen oder Konstanten zerlegen, welche du dann wie gewohnt verwenden kannst:
+
+```Swift
+let (statusCode, statusNachricht) = http404Fehler
+print("Der Statuscode ist \(statusCode)")
+// Gibt "Der Statuscode ist 404" aus
+print("Die Statusnachricht lautet \(statusNachricht)")
+// Gibt "Die Statusnachricht lautet Not Found" aus
+```
+
+Wenn du nur Teile eines Tupels benötigst, kannst du einzelne Werte mit einem Unterstrich (_) beim zerlegen ignorieren:
+
+```Swift
+let (nurDenStatusCode, _) = http404Fehler
+print("Der Statuscode ist \(nurDenStatusCode)")
+// gibt "Der Satuscode ist 404" aus
+```
+
+Alternativ kannst du auf die einzelnen Elemente eines Tupels auch direkt via Indexzahlen (von 0 beginnend) zugreifen:
+
+```Swift
+print("Der Statuscode ist \(http404Fehler.0)")
+// Gibt "Der Statuscode ist 404" aus
+print("Die Statusnachricht lautet \(http404Fehler.1)")
+// Gibt "Die Statusnachricht lautet Not Found" aus
+```
+
+Bei der Definition eines Tupels kannst du den einzelnen Elementen auch einen Namen vergeben:
+
+```Swift
+let http200Status = (statusCode: 200, nachricht: "OK")
+```
+
+Wenn du die Elemente eines Tupels benennst, kannst du mit den Elementnamen direkt auf die Werte der Elemente zugreifen:
+
+```Swift
+print("Der Statuscode ist \(http200Status.statusCode)")
+// Gibt "Der Statuscode ist 200" aus
+print("Die Statusnachricht lautet \(http404Fehler.nachricht)")
+// Gibt "Die Statusnachricht lautet OK" aus
+```
+
+Tupel sind besonders nützlich als Rückgabewert von Funktionen. Eine Funktion, die versucht eine Webseite zu laden, könnte einen ```(Int, String)``` Tupel zurückgeben, um den Erfolg oder Fehler beim Laden der Seite zu beschreiben. Durch die Rückgabe von zwei separaten Werten (mit je einem eigenen Typ), kann die Funktion mehr Informationen über das Ergebnis zurückgeben, als nur mit einem einzelnen Wert. Weitere Informationen dazu findest du im Abschnitt [Funktionen mit mehreren Rückgabewerten](TO BE DEFINED)
+
+> HINWEIS
+Tupel sind nützlich für eine temporäre Gruppierung von zusammengehörenden Werten. Sie sind nicht dafür gemacht, komplexe Datenstrukturen aufzubauen. Wenn du die Datenstruktur über längere Zeit benötigst, solltest du sie stattdessen als Klasse oder als Struktur modellieren. Weitere Informationen dazu findest du im Abschnitt [Klassen und Strukturen](TO BE DEFINED).
+
