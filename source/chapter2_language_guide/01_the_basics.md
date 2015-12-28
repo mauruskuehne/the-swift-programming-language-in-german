@@ -503,7 +503,7 @@ Da der Initialisierer fehlschlagen könnte, gibt er einen _optionalen_ ```Int```
 
 ### nil
 
-Du kannst optionalen Variablen einen wertlosen Zustand versetzen, indem du ihr den Sezialwert ```nil``` zuweist:
+Du kannst optionalen Variablen einen wertlosen Zustand versetzen, indem du ihr den Spezialwert ```nil``` zuweist:
 
 ```Swift
 var serverResponseCode: Int? = 404
@@ -525,7 +525,7 @@ var umfrageAntwort: String?
 > HINWEIS
 > Swifts ```nil``` ist nicht das gleiche ```nil``` wie in Objective-C. In Objective-C ist ```nil``` ein Zeiger auf ein nicht existierendes Objekt. In Swift ist ```nil``` kein Zeiger, es ist die Absenz eines Wertes eines bestimmten Typs. Optionale Werte irgend eines Typs können auf ```nil``` gesetzt werden, nicht nur Objekttypen.
 
-## If-Anweisung und erzwungenes Auspacken
+### If-Anweisung und erzwungenes Auspacken
 
 Du kannst eine ```if``` Anweisung verwenden um herauszufinden, ob ein optionaler Typ einen Wert beinhaltet. Dies machst du, indem du den optionalen Wert gegen ```nil``` prüfst. Du kannst diese Prüfung mit dem "gleich" Operator (```==```) oder dem "nicht gleich" Operator (```!=```) durchführen.
 
@@ -549,6 +549,43 @@ if konvertierteZahl != nil {
 
 Für mehr Infos zur ```if```-Anweisung, siehe [Kontrollfluss](TO BE DEFINED).
 
-> HINWEIS
+> HINWEIS  
 > Wenn ```!``` auf einen optionalen Typ ohne Inhalt angewendet wird, führt dies zu einem Laufzeitfehler. Stelle immer sicher, dass ein Wert vorhanden ist, bevor du versuchst darauf zuzugreifen.
 
+### Binden von optionalen Werten
+
+Du kannst _optionale Werte binden_ um herauszufinden, ob darin ein Wert enthalten ist. Wenn ja, wird der Wert direkt als temporäre Konstante oder Variable zur Verfügung gestellt. Die Bindung von optionalen Werten kann mit ```if``` und ```while``` Anweisungen verwendet werden. Der Inhalt eines optionalen Wertes wird geprüft und sofern vorhanden direkt in eine Konstante oder Variable zu extrahiert. Dies geschieht alles als eine einzelne Aktion. ```if``` und ```while``` Anweisungen sind unter [Kontrollfluss](TO BE DEFINED) im Detail beschrieben.
+
+Schreibe die ```if```-Anweisung folgendermassen, um damit einen optionalen Wert zu binden:
+
+```Swift
+if let konstantenName = optionalerWert {
+    // weitere Anweisungen
+}
+```
+
+Wir können unser ```vielleichtEineZahl``` Beispiel aus [Optionale Typen](TO BE DEFINED) umschreiben, damit es neu den optionalen Wert bindet, anstatt ihn zwingend auszupacken.
+
+```Swift
+if let effektiveZahl = Int(vielleichtEineZahl) {
+    print("\'\(vielleichtEineZahl) hat einen Integer-Wert von \(effektiveZahl)")
+} else {
+    print("\'\(vielleichtEineZahl)\' konnte nicht in einen Integer konvertiert werden.")
+```
+
+Dieser Code kann folgendermassen gelesen werden:
+
+"Wenn der von ```Int(vielleichtEineZahl)``` zurückgegebene optionale ```Int``` einen Wert beinhaltet, setze eine neue Konstante ```effektiveZahl``` auf diesen Wert."
+
+Wenn die Konvertierung erfolgreich war, steht die ```effektiveZahl``` Variable im ersten Abschnitt der ```if```-Anweisung zur Verfügung. Sie wurde bereits mit dem Wert aus dem optionalen Typ initialisiert. Es ist also kein ```!```-Suffix nötig um auf den Wert zuzugreifen. In diesem Beispiel wird ```effektiveZahl``` einfach dafür verwendet, um das Resultat der Konvertierung anzuzeigen.
+
+Das Binden von optionalen Werten funktioniert sowohl mit Konstanten, als auch mit Variablen. Wenn du den Wert von ```effektiveZahl``` im ersten Abschnitt der ```if```-Anweisung verändern möchtest, musst du stattdessen ```if var effektiveZahl``` schreiben. Der Wert innerhalb des optionalen Wertes steht dir nun als Variable anstatt einer Konstante zur Verfügung.
+
+In einer ```if```-Anweisung kannst du mehrere optionale Werte auf einmal binden und mit einer ```where```-Klausel auch noch einen boolschen Ausdruck überprüfen:
+
+```Swift
+if let ersteZahl = Int("4"), zweiteZahl = Int("42") where ersteZahl < zweiteZahl {
+    print("\(ersteZahl) < \(zweiteZahl)")
+}
+// Gibt "4 < 42" aus
+```
