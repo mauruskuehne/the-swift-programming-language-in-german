@@ -369,3 +369,47 @@ var maxGefundeneAmplitude = AudioSample.min
 
 In diesem Beispiel ist ```AudioSample``` als Alias für ```UInt16``` definiert. Da es nur ein Alias ist, ist der Aufruf von ```AudioSample.min``` eigentlich ein Aufruf von ```UInt16.min```, welche dann den Initialwert ```0``` für die Variable ```maxGefundeneAmplitude``` zurückgibt. 
 
+## Boolsche Werte
+
+Swift hat einen einfachen boolschen Typ, namens ```Bool```. Boolsche Werte werden auch logische Werte genannt, da sie immer entweder wahr oder falsch sind. Swift bietet dafür zwei boolsche Werte an, ```true``` und ```false```:
+
+```Swift
+let orangenSindOrange = true
+let ruebenSindLecker = false
+```
+
+Der abgeleitete Typ von ```orangenSindOrange``` und ```ruebenSindLecker``` ist ```Bool```, da sie mit boolschen Literalwerten initialisiert wurden. Genau so wie bei ```Int``` und ```Double``` weiter oben, musst du Variablen oder Konstanten nicht explizit als ```Bool``` markieren, wenn du sie direkt beim erstellen auf ```true``` oder ```false``` setzt. Typinferenz hilft dabei, die Initialisierung von Konstanten und Variablen in deinem Code kompakter und lesbarer zu machen, wenn du sie direkt mit einem Wert initialisierst.
+
+Boolsche Werte sind besonders nützlich wenn du mit bedingten Anweisungen arbeitest, zum Beispiel der ```if``` Anweisung:
+
+```Swift
+
+if ruebenSindLecker {
+  print("Mmm, köstliche Rüben!")
+} else {
+  print("Ieeh, Rüben sind schrecklich.")
+}
+// Gibt "Ieeh, Rüben sind schrecklich." aus
+```
+
+Bedingte Anweisungen wie die ```if``` Anweisung werden unter [Kontrollfluss](TO BE DEFINED) detaillierter behandelt. Swifts typsicherheit verhindert, dass nicht-boolsche Werte anstelle eines ```Bool```s verwendet werden. Das folgende Beispiel führt zu einem Kompilierfehler:
+
+```Swift
+let i = 1
+if i {
+  // Dieses Beispiel kompiliert nicht und ergibt einen Fehler
+}
+```
+
+Folgende Alternative ist hingegen gültig:
+
+```Swift
+let i = 1
+if i == 1 {
+  // Dieses Beispiel kann erfolgreich kompiliert werden
+}
+```
+
+Das Resultat des Vergleichs ```i == 1``` ist vom Typ ```Bool```, deshalb entstehen keine Probleme bei der Überprüfung der Typen. Vergleiche wie ```i == 1``` werden unter [Basisoperationen](TO BE DEFINED) erläutert.
+
+Genauso wie in den anderen Beispielen zu Swifts Typsicherheit, verhindert dieses Verhalten ungewollte Fehler. Sie sorgt zudem dafür, dass die Absicht hinter einem Codeabschnitt immer klar ersichtlich ist.
