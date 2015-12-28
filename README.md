@@ -66,7 +66,7 @@ Quelle: [Englische Dokumentation von Apple](https://developer.apple.com/library/
 
 ### Formatierung von Texten
 
-Die Formatierung wird soweit wie möglich aus dem Originaltext übernommen. D.h. wenn Worte im Original kursiv sind, werden sie auch in der übersetzten Version kursiv geschrieben, das gleiche gilt auch für alle anderen Formatierungen.
+Die Formatierung wird soweit wie möglich aus dem Originaltext übernommen. Wenn z.B. Worte im Original kursiv sind, werden sie auch in der übersetzten Version kursiv geschrieben. Das gleiche gilt auch für alle anderen Formatierungen.
 Für eine einheitliche Darstellung sollten überall folgende Formate verwendet werden:
 
 Überschriften werden normal als h1, h2, h3, usw. definiert. Begonnen wird mit h1 für den Seitentitel (üblicherweise die erste Überschrift im Text).  
