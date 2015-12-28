@@ -589,3 +589,20 @@ if let ersteZahl = Int("4"), zweiteZahl = Int("42") where ersteZahl < zweiteZahl
 }
 // Gibt "4 < 42" aus
 ```
+
+### Implizit ausgepackte optionale Typen
+
+Wie oben beschrieben erlauben es optionale Typen, dass eine Konstante oder Variable "kein Wert" haben darf. 
+```if```-Anweisngen können optionale Typen überprüfen, ob ein Wert existiert und wenn nötig diesen auch direkt binden, damit auf den Wert zugegriffen werden kann.
+
+Manchmal ist es vom Programmverlauf her klar, dass eine optionale Variable oder Konstante _immer_ einen Wert haben wird, nachdem sie einmal gesetzt wurde. In diesen Fällen ist es nützlich, wenn der optionale Wert nicht immer wieder geprüft und ausgepackt werden muss, wenn darauf zugegriffen wird. In diesen Fällen können wir davon ausgehen, dass wir immer einen Wert haben.
+
+Diese Art von optionalen Typen werden _implizit ausgepackte optionale Typen_ genannt. Du schreibst so ein Typ, indem du ein Ausrufezeichen (```String!```) anstelle eines Fragezeichen (```String?```) nach den Typ setzt, den du optional machen möchtest.
+
+Implizit ausgepackte optionale Typen sind nützlich, wenn wir wissen, dass ihnen kurz nach ihrer Definition ein Wert zugewiesen wird und sie definitiv für den Rest ihrer Lebenszeit einen Wert haben. Der Hauptanwendungsfall der implizit ausgepackten optionalen Typen in Swift ist bei der Initialisierung von Klassen. Siehe dazu auch [Nicht-besitzende Referenzen und implizit ausgepackte optionale Eigenschaften](TO BE DEFINED)
+
+Hinter den Kulissen handelt es sich bei implizit entpackten optionalen Typen um ganz normale optionale Typen. Einzig mit dem Unterschied, dass sie auch als nicht-optionale Typen verwendet werden können, ohne dass ihr Wert jedes Mal neu ausgepackt werden muss. Das folgende Beispiel zeigt den Unterschied zwischen einem optionalen ```String``` und einem implizit ausgepackten optionalen ```String```, wenn auf den darunterliegenden Wert zugegriffen werden möchte:
+
+```Swift
+let eventuellEinString: String? = "Ein optionaler String."
+let erzwungenderString: String 
