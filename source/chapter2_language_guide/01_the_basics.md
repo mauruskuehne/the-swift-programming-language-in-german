@@ -524,3 +524,31 @@ var umfrageAntwort: String?
 
 > HINWEIS
 > Swifts ```nil``` ist nicht das gleiche ```nil``` wie in Objective-C. In Objective-C ist ```nil``` ein Zeiger auf ein nicht existierendes Objekt. In Swift ist ```nil``` kein Zeiger, es ist die Absenz eines Wertes eines bestimmten Typs. Optionale Werte irgend eines Typs können auf ```nil``` gesetzt werden, nicht nur Objekttypen.
+
+## If-Anweisung und erzwungenes Auspacken
+
+Du kannst eine ```if``` Anweisung verwenden um herauszufinden, ob ein optionaler Typ einen Wert beinhaltet. Dies machst du, indem du den optionalen Wert gegen ```nil``` prüfst. Du kannst diese Prüfung mit dem "gleich" Operator (```==```) oder dem "nicht gleich" Operator (```!=```) durchführen.
+
+Wenn ein optionaler Typ einen Wert beinhaltet, gilt dieser als "nicht gleich wie" ```nil```:
+
+```Swift
+if konvertierteZahl != nil {
+    print("konvertierteZahl beinhaltet einen ganzzahligen Wert.")
+}
+// Gibt "konvertierteZahl beinhaltet einen ganzzahligen Wert." aus
+```
+
+Sobald du dir sicher bist, dass der optionale Typ einen Wert beinhaltet, kannst du den darin enthaltenen Wert durch hinzufügen eines Ausrufezeichens (```!```) am Ende des Namens abrufen. Das Ausrufezeichen bedeutet so viel wie "Ich weiss, dass der optionale Typ einen Wert beinhaltet, bitte verwende ihn". Dies wird _erzwungenes Auspacken_ des optionalen Wertes genannt:
+
+```Swift
+if konvertierteZahl != nil {
+    print("konvertierteZahl hat einen ganzzahligen Wert von \(konvertierteZahl!).")
+}
+// Gibt "konvertierteZahl beinhaltet einen ganzzahligen Wert von 123." aus
+```
+
+Für mehr Infos zur ```if```-Anweisung, siehe [Kontrollfluss](TO BE DEFINED).
+
+> HINWEIS
+> Wenn ```!``` auf einen optionalen Typ ohne Inhalt angewendet wird, führt dies zu einem Laufzeitfehler. Stelle immer sicher, dass ein Wert vorhanden ist, bevor du versuchst darauf zuzugreifen.
+
