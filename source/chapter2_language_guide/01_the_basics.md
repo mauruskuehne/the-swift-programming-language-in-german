@@ -8,7 +8,7 @@ Genauso wie C verwendet Swift Variablen um Werte zu speichern und darauf zu verw
 
 Neben den bekannten Typen führt Swift auch erweiterte Typen ein, welche in Objective-C nicht vorhanden sind. So zum Beispiel Tupel, mit welchen Wertpaare definiert und übergeben werden können. Tupel können verwendet werden, um mehrere Werte aus einer Funktion zurückzugeben.
 
-Des weiteren beinhaltet Swift optionale Typen, mit welchen nicht vorhandene Werte beschrieben werden können. Optionale Typen definieren entweder, dass ein Wert vorhanden ist und den Wert _x_ beinhaltet, oder aber dass gar kein Wert vorhanden ist. Optionale Typen sind ähnlich wie ```nil``` für Zeiger in Objective-C. Optionale Typen können aber mit allen Typen verwendet werden, nicht nur Klassen. Optionale Typen sind sicherer und aussagekräftiger als ```nil```-Zeiger in Objective-C, sie sind deshalb Bestandteil vieler von Swifts mächtigsten Funktionen.
+Des weiteren beinhaltet Swift optionale Typen, mit welchen nicht vorhandene Werte beschrieben werden können. Optionale Typen definieren entweder, dass ein Wert vorhanden ist und _x_ beinhaltet, oder aber dass gar kein Wert vorhanden ist. Optionale Typen sind ähnlich wie ```nil``` für Zeiger in Objective-C. Optionale Typen können aber mit allen Typen verwendet werden, nicht nur Klassen. Optionale Typen sind sicherer und aussagekräftiger als ```nil```-Zeiger in Objective-C, sie sind deshalb Bestandteil vieler von Swifts mächtigsten Funktionen.
 
 Swift ist eine _typsichere_ Sprache, das bedeutet die Sprache hilft dir dabei klar zu definieren, mit welchen Typen dein Code arbeiten kann. Die Typsicherheit verhindert, dass du fälschlicherweise ein ```Int``` an ein Stück Code übergibst, welches eigentlich ein ```String``` erwartet. Genauso wird verhindert, dass aus Versehen ein optionaler ```String``` an ein Stück Code übergeben wird, welches einen nicht-optionalen ```String``` erwartet. Die Typsicherheit hilft dir Fehler so früh wie möglich während der Entwicklung zu finden und zu korrigieren.
 
@@ -476,3 +476,51 @@ Tupel sind besonders nützlich als Rückgabewert von Funktionen. Eine Funktion, 
 > HINWEIS
 Tupel sind nützlich für eine temporäre Gruppierung von zusammengehörenden Werten. Sie sind nicht dafür gemacht, komplexe Datenstrukturen aufzubauen. Wenn du die Datenstruktur über längere Zeit benötigst, solltest du sie stattdessen als Klasse oder als Struktur modellieren. Weitere Informationen dazu findest du im Abschnitt [Klassen und Strukturen](TO BE DEFINED).
 
+## Optionale Typen
+
+Du kannst _optionale Typen_ in Situationen verwenden, wo ein Wert unter Umständen nicht vorhanden ist. Ein optionaler Typ sagt aus:
+
+* Es _gibt_ einen Wert und er entspricht _x_
+
+_oder_
+
+* Es gibt _keinen_ Wert
+
+> HINWEIS
+> Das Konzept von optionalen Typen gibt es in C oder Objective-C nicht. Man kann sie am ehesten mit der Objective-C Funktion vergleichen, dass Methoden ```nil``` anstelle eines Objektes zurückgeben können. ```nil``` bedeutet in diesem Fall "es ist kein gültiges Objekt vorhanden". Dies funktioniert aber nur für Objekte, nicht für Strukturen, primitiven Datentypen oder Enumerationswerten. Für diese Typen müssen Objective-C Methoden einen Spezialwert definieren und zurückgeben (zum Beispiel ```NSNotFound```) um das Fehlen eines Wertes anzudeuten. Dieser Ansatz setzt voraus, dass der Aufrufer der Methode weiss, dass es spezielle Werte gibt, die er überprüfen muss. Swifts optionale Typen ermöglichen es dir die Absenz eines Wertes für _alle Typen_ zu definieren. Du musst keine speziellen Konstanten definieren.
+
+Hier ist ein Beispiel wie mit Hilfe von optionalen Typen die Absenz eines Wertes behandelt werden kann. Swifts ```Int``` hat einen Initialisierer, welcher versucht ein ```String```-Wert in einen ```Int```-Wert zu konvertieren. Es kann aber nicht jeder Text in eine Ganzzahl konvertiert werden. Der Text ```"123"``` kann in den numerischen Wert ```123``` konvertiert werden, aber der Text ```"Hallo, Welt"``` hat keinen offensichtlichen numerischen Wert.
+
+Das Beispiel unten verwenden diesen Initialisierer um Konvertierung eines ```String``` in einen  ```Int``` zu probieren:
+
+```Swift
+let vielleichtEineZahl = "123"
+let konvertierteZahl = Int(vielleichtEineZahl)
+// konvertierteZahl hat den abgeleiteten Typ "Int?", oder "optionaler Int"
+```
+
+Da der Initialisierer fehlschlagen könnte, gibt er einen _optionalen_ ```Int``` zurück anstatt eines normalen ```Int```. Ein optionaler ```Int``` wird als ```Int?``` bezeichnet, nicht als ```Int```. Das Fragezeichen gibt an, dass der enthaltene Wert optional ist. Das entweder, dass _irgendein_ ```Int```-Wert enthalten ist oder _gar kein Wert_. (Es kann nichts anderes beinhalten. Es ist also sicher kein ```Bool``` oder ```String``` wert darin enthalten. Es enthält entweder einen ```Int```-Wert oder gar nichts).
+
+### nil
+
+Du kannst optionalen Variablen einen wertlosen Zustand versetzen, indem du ihr den Sezialwert ```nil``` zuweist:
+
+```Swift
+var serverResponseCode: Int? = 404
+// serverResponseCode beinhaltet den richtigen Int Wert 404
+serverResponseCode = nil
+// serverResponseCode beinhaltet jetzt keinen Wert mehr
+```
+
+> HINWEIS
+> ```nil``` kann nicht mit nicht-optionalen Konstanten oder Variablen verwendet werden. Wenn eine Konstante oder Variable in deinem Code mit der Absenz eines Wertes umgehen muss, solltest du sie immer als optionalen Wert des entsprechenden Typs deklarieren.
+
+Optionale Variablen werden automatisch mit ```nil``` initialisiert, wenn du ihnen bei der Deklaration keinen Initialwert übergibst.
+
+```Swift
+var umfrageAntwort: String?
+// umfrageAntwort wurde automatisch auf nil gesetzt
+```
+
+> HINWEIS
+> Swifts ```nil``` ist nicht das gleiche ```nil``` wie in Objective-C. In Objective-C ist ```nil``` ein Zeiger auf ein nicht existierendes Objekt. In Swift ist ```nil``` kein Zeiger, es ist die Absenz eines Wertes eines bestimmten Typs. Optionale Werte irgend eines Typs können auf ```nil``` gesetzt werden, nicht nur Objekttypen.
