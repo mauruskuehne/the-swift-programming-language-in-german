@@ -71,34 +71,37 @@ Für eine einheitliche Darstellung sollten überall folgende Formate verwendet w
 
 Überschriften werden als h1, h2, h3, usw. definiert. Begonnen wird mit h1 für den Seitentitel (üblicherweise die erste Überschrift im Text).  
 Beispiel:  
-\# Die Grundlagen  
-\#\# Konstanten und Variablen  
-\#\#\# Konstanten und Variablen deklarieren  
-
+```markdown
+# Die Grundlagen  
+## Konstanten und Variablen  
+### Konstanten und Variablen deklarieren  
+```
 _Wichtige_ Worte werden kursiv formatiert:  
 Beispiel:  
-\_Wort\_
+```markdown
+_Wort_
+```
 
 Swift-```Schlüsselwörter``` oder Namen von ```Konstanten``` / ```Variablen``` innerhalb eines Textes werden als Codeblock formatiert.  
 Beispiel:  
-\`\`\`Inline Code\`\`\` 
-
+```markdown
+... mit dem ```var``` Schlüsselwort ...
+```
 
 Hinweistexte werden als Blockquotes formatiert.  
 Beispiel:  
-> \> HINWEIS  
-> \> Ich bin ein Hinweistext
+```markdown
+> Hinweis:  
+> Ich bin ein Hinweistext
+```
 
 Eigenständige / mehrzeilige Codebeispiele werden als Swift-Codeblock formatiert.  
 Beispiel:  
-\`\`\`Swift  
+<pre>
+```Swift  
 let pi = 3.14159  
-\`\`\`
-
-wird so zu:
-```Swift
-let pi = 3.14159
 ```
+</pre>
 
 ## History
 
