@@ -8,12 +8,12 @@ Quelle: [Englische Dokumentation von Apple](https://developer.apple.com/library/
 
 ### Kapitel 1
 
-- [Über Swift](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter1_welcome_to_swift/01_about_swift.md)
+- [Über Swift](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter1_welcome_to_swift/01_about_swift.md) ([Dominic Frei](https://github.com/DominicFrei))
 - [Eine Swift Tour](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter1_welcome_to_swift/02_a_swift_tour.md)
 
 ### Kapitel 2
 
-- [Die Grundlagen](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter2_language_guide/01_the_basics.md)
+- [Die Grundlagen](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter2_language_guide/01_the_basics.md) ([Maurus Kühne](https://github.com/mauruskuehne))
 - [Die Basisoperationen](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter2_language_guide/02_basic_operations.md)
 - [Strings und Characters](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter2_language_guide/03_strings_and_characters.md)
 - [Kollektionen](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter2_language_guide/04_collection_types.md)
@@ -41,7 +41,7 @@ Quelle: [Englische Dokumentation von Apple](https://developer.apple.com/library/
  
 ### Kapitel 3
 
-- [Über die Dokumentation](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter3_language_reference/01_about_the_language_reference.md)
+- [Über die Dokumentation](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter3_language_reference/01_about_the_language_reference.md) ([Dominic Frei](https://github.com/DominicFrei))
 - [Grammatik](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter3_language_reference/02_lexical_structure.md)
 - [Typen](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter3_language_reference/03_types.md)
 - [Ausdrücke](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter3_language_reference/04_expressions.md)
