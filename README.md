@@ -103,6 +103,8 @@ let pi = 3.14159
 ```
 </pre>
 
+Weitere Infos zum Verfassen von Texten in Markdown gibt es im GitHub [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) 
+
 ## History
 
 
