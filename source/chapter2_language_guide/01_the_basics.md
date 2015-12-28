@@ -350,5 +350,22 @@ Bei dieser Art der Konvertierung in Ganzzahlen werden die Nachkommastellen der F
 > HINWEIS
 > Die Kombinationsregeln für numerische Konstanten und Variablen unterscheiden sich von denen für numerische Literale. Das Literal ```3``` kann direkt mit dem Literal ```0.14159``` addiert werden, da die Literale keinen expliziten Typ haben. Ihr Typ wird erst bei der Evaluation durch den Compiler festgelegt.
 
+## Typalias
 
+Ein _Typalias_ definiert einen anderen Namen für einen bereits existierenden Typ. Du kannst einen Typalias mit dem Schlüsselwort ```typealias``` definieren.
+
+ein Typalias ist dann nützlich, wenn du auf einen bestehenden Typ mit einem anderen, kontextuell passenderen Namen zugreifen möchtest. Zum Beispiel wenn du mit Daten einer bestimmten Grösse aus einer externen Quelle arbeitest:
+
+```Swift
+typealias AudioSample = UInt16
+```
+
+Nachdem du den Typalias definiert hast, kannst du ihn überall dort verwenden, wo du auch den originalen Typen verwenden kannst:
+
+```Swift
+var maxGefundeneAmplitude = AudioSample.min
+// maxGefundeneAmplitude hat nun den Wert 0
+```
+
+In diesem Beispiel ist ```AudioSample``` als Alias für ```UInt16``` definiert. Da es nur ein Alias ist, ist der Aufruf von ```AudioSample.min``` eigentlich ein Aufruf von ```UInt16.min```, welche dann den Initialwert ```0``` für die Variable ```maxGefundeneAmplitude``` zurückgibt. 
 
