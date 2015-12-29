@@ -605,4 +605,34 @@ Hinter den Kulissen handelt es sich bei implizit entpackten optionalen Typen um 
 
 ```Swift
 let eventuellEinString: String? = "Ein optionaler String."
-let erzwungenderString: String 
+let erzwungenerString: String = eventuellEinString! // benötigt ein Ausrufezeichen
+
+let wahrscheinlichEinString: String! = "Ein implizit ausgepackter optionaler String."
+let impliziterString: String = wahrscheinlichEinString // Ausrufezeichen nicht nötig
+```
+
+Du kannst dir implizit ausgepackte optionale Werte so vorstellen, als ob du die Erlaubnis gibst, den optionalen Wert automatisch "auszupacken", wann immer er benötigt wird. Anstelle ein Ausrufezeichen bei jeder Verwendung nach den Namen zu setzen, kannst du es bei der Deklaration direkt beim Typ angeben.
+
+> HINWEIS  
+> Wenn ein implizit ausgepackter optionaler Wert beim Versuch sie auszulesen ```nil``` ist, löst du damit einen Laufzeitfehler aus. Das Resultat ist genau das gleiche, wie wenn du das Ausrufezeichen hinter einen normalen optionalen Wert setzt, der ```nil``` beinhaltet.
+
+Du kannst implizit ausgepackte optionale Werte genauso wie normale optionale Werte überprüfen, ob sie einen Wert beinhalten:
+
+```Swift
+if wahrscheinlichEinString != nil {
+    print(wahrscheinlichEinString)
+}
+// gibt "Ein implizit ausgepackter optionaler String" aus
+```
+
+Du kannst implizit ausgepackte optionale Werte ebenfalls binden, um sie zu überprüfen und den Wert in einer Anweisung auszulesen:
+
+```Swift
+if let definitivEinString = wahrscheinlichEinString {
+    print(definitivEinString)
+}
+// Gibt "Ein implizit ausgepackter optionaler String" aus
+```
+
+> HINWEIS  
+> Verwende keinen implizit ausgepackten optionalen Typ, wenn die Variable zu einem späteren Zeitpunkt ```nil``` beinhalten könnte. Verwende immer einen normalen optionalen Typ für Variablen, wenn du sie während ihrer Lebenszeit auf ```nil``` überprüfen musst.
