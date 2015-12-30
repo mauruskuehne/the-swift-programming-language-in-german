@@ -13,7 +13,7 @@ Des weiteren beinhaltet Swift optionale Typen, mit welchen nicht vorhandene Wert
 Swift ist eine _typsichere_ Sprache, das bedeutet die Sprache hilft dir dabei klar zu definieren, mit welchen Typen dein Code arbeiten kann. Die Typsicherheit verhindert, dass du fälschlicherweise ein ```Int``` an ein Stück Code übergibst, welches eigentlich ein ```String``` erwartet. Genauso wird verhindert, dass aus Versehen ein optionaler ```String``` an ein Stück Code übergeben wird, welches einen nicht-optionalen ```String``` erwartet. Die Typsicherheit hilft dir Fehler so früh wie möglich während der Entwicklung zu finden und zu korrigieren.
 
 
-## Konstanten und Variablen
+## Konstanten und Variablen (Constants and Variables)
 
 Konstanten und Variablen assoziieren einen Namen (z.B. ```maximaleAnzahlLoginVersuche```oder ```willkommensNachricht```) mit einem Wert eines bestimmten Typs (z.B. die Zahl ```10```oder den Text ```"Hallo"```). Der Wert einer Konstante kann nicht mehr verändert werden, nachdem er einmal gesetzt wurde. Einer Variablen hingegen kann zu einem späteren Zeitpunkt ein neuer Wert zugewiesen werden.
 
@@ -42,7 +42,7 @@ var x = 0.0, y = 0.0, z = 0.0
 > HINWEIS  
 > Wenn sich ein Wert nicht verändert, deklariere diesen immer als Konstante mit dem ```let```Schlüsselwort. Verwende Variablen nur für Werte, welche später verändert werden müssen.
 
-### Typhinweise
+### Typhinweise (Type Annotations)
 
 Du kannst bei der Deklaration einer Variable oder Konstanten einen Typhinweis angeben, um genau zu definieren, was für Werte in der Variable oder Konstanten erlaubt sein sollen. Typhinweise werden nach dem Variablen- oder Konstantennamen angegeben. Schreibe nach dem Namen der Konstante oder Variable ein Doppelpunkt un ein Leerzeichen und anschliessend den Namen des Typs.
 
@@ -163,13 +163,13 @@ let katze = "🐱"; print(katze)
 // Gibt "🐱" aus
 ```
 
-### Integer
+### Integer (Integers)
 
 Integer sind ganze Zahlen ohne Bruchanteil, also zum Beispiel ```42``` oder ```-23```. Integer sind entweder vorzeichenbehaftet (positiv, null oder negativ) oder vorzeichenlos (positiv oder null).
 
 Swift bietet Integer mit oder ohne Vorzeichen in den Grössen 8, 16, 32 oder 64 Bit. Diese Integer haben ähnliche Namenskonventionen wie in C, ein vorzeichenloser 8-Bit Integer ist also vom Typ ```UInt8```, ein 32-Bit Integer mit Vorzeichen ist vom Typ ```Int32```. Wie alle Typen in Swift beginnen die Typnamen mit einem Grossbuchstaben.
 
-#### Grenzwerte der Integer 
+#### Grenzwerte der Integer
 
 Du kannst auf die Grenzwerte eines Integer-Types über die Eigenschaften ```min``` und ```max``` zugreifen:
 
@@ -200,7 +200,7 @@ Zusätzlich bietet Swift mit ```UInt``` weiteren vorzeichenlosen Integer-Typ. Di
 > HINWEIS  
 > Verwende ```UInt``` nur, wenn du wirklich einen vorzeichenlosen Integer-Typ von der Grösse der nativen Busbreite benötigst. Wenn dies nicht der Fall ist, solltest du ```Int``` verwenden. Dies auch wenn du weisst, dass du darin keine negativen Werte speichern wirst. Konsistente Verwendung von ```Int``` für ganzzahlige Werte macht deinen Code kompatibler, benötigt keine Konvertierungen zwischen den Integer-Typen und ermöglicht die häufigere Verwendung der Typinferenz (siehe <a href="TO BE DEFINED">Typsicherheit und Typinferenz</a>).
 
-### Fliesskommazahlen
+### Fliesskommazahlen (Floating-Point Numbers)
 
 _Fliesskommazahlen_ sind Zahlen mit einem Bruchanteil, also zum Beispiel ```3.14159```, ```0.1``` oder ```-273.15```.
 
@@ -212,7 +212,7 @@ Fliesskommazahlen-Typen können einen viel grösseren Zahlenbereich abdecken als
 > HINWEIS  
 > ```Double``` hat eine Genauigkeit von mindestens 15 Dezimalstellen, die Genauigkeit von ```Float``` kann unter Umständen bei nur 6 Dezimalstellen liegen. Welchen Typ du verwenden sollst hängt von der Art und der Grösse der Werte ab mit denen du arbeitest. In Situationen wo beide Typen verwendet werden könnten, solltest du ```Double``` verwenden.
 
-### Typsicherheit und Typinferenz
+### Typsicherheit und Typinferenz (Type Safety and Type Inference)
 
 Swift ist eine _typsichere_ Programmiersprache. Eine typsichere Sprache unterstützt dich dabei, klar zu definieren, mit was für Typen dein Code arbeiten kann. Wenn ein Teil deines Codes einen ```String``` erwartet, kannst du ihm nicht aus Versehen einen ```Int``` übergeben.
 
@@ -295,7 +295,7 @@ let eineMillion = 1_000_000
 let bisschenMehrAlsEineMillion = 1_000_000.000_000_1
 ```
 
-### Numerische Typkonvertierungen
+### Numerische Typkonvertierung
 
 Wenn möglich solltest du immer den Typ ```Int``` für all deine ganzzahligen Variablen und Konstanten verwenden, selbst wenn du weisst, dass darin nie negative Zahlen vorkommen werden. Wenn du den Standardtyp verwendest, sind die Variablen und Konstanten direkt kompatibel und sie entsprechen dem abgeleiteten Typ der Integer-Literalwerte.
 
@@ -352,7 +352,7 @@ Bei dieser Art der Konvertierung in Ganzzahlen werden die Nachkommastellen der F
 > HINWEIS  
 > Die Kombinationsregeln für numerische Konstanten und Variablen unterscheiden sich von denen für numerische Literale. Das Literal ```3``` kann direkt mit dem Literal ```0.14159``` addiert werden, da die Literale keinen expliziten Typ haben. Ihr Typ wird erst bei der Evaluation durch den Compiler festgelegt.
 
-## Typalias
+## Typalias (Type Aliases)
 
 Ein _Typalias_ definiert einen anderen Namen für einen bereits existierenden Typ. Du kannst einen Typalias mit dem Schlüsselwort ```typealias``` definieren.
 
@@ -371,7 +371,7 @@ var maxGefundeneAmplitude = AudioSample.min
 
 In diesem Beispiel ist ```AudioSample``` als Alias für ```UInt16``` definiert. Da es nur ein Alias ist, ist der Aufruf von ```AudioSample.min``` eigentlich ein Aufruf von ```UInt16.min```, welche dann den Initialwert ```0``` für die Variable ```maxGefundeneAmplitude``` zurückgibt. 
 
-## Boolsche Werte
+## Boolsche Werte (Booleans)
 
 Swift hat einen einfachen boolschen Typ, namens ```Bool```. Boolsche Werte werden auch logische Werte genannt, da sie immer entweder wahr oder falsch sind. Swift bietet dafür zwei boolsche Werte an, ```true``` und ```false```:
 
@@ -416,7 +416,7 @@ Das Resultat des Vergleichs ```i == 1``` ist vom Typ ```Bool```, deshalb entsteh
 
 Genauso wie in den anderen Beispielen zu Swifts Typsicherheit, verhindert dieses Verhalten ungewollte Fehler. Sie sorgt zudem dafür, dass die Absicht hinter einem Codeabschnitt immer klar ersichtlich ist.
 
-## Tupel
+## Tupel (Tuples)
 
 Ein Tupel gruppiert mehrere Werte in einen einzelnen zusammengesetzten Wert. Die Werte eines Tupels können von einem beliebigen Typ sein. Die Werte innerhalb eines Tupels müssen nicht alle den gleichen Typ haben.
 
@@ -478,7 +478,7 @@ Tupel sind besonders nützlich als Rückgabewert von Funktionen. Eine Funktion, 
 > HINWEIS  
 Tupel sind nützlich für eine temporäre Gruppierung von zusammengehörenden Werten. Sie sind nicht dafür gemacht, komplexe Datenstrukturen aufzubauen. Wenn du die Datenstruktur über längere Zeit benötigst, solltest du sie stattdessen als Klasse oder als Struktur modellieren. Weitere Informationen dazu findest du im Abschnitt [Klassen und Strukturen](TO BE DEFINED).
 
-## Optionale Typen
+## Optionale Typen (Optionals)
 
 Du kannst _optionale Typen_ in Situationen verwenden, wo ein Wert unter Umständen nicht vorhanden ist. Ein optionaler Typ sagt aus:
 
@@ -527,7 +527,7 @@ var umfrageAntwort: String?
 > HINWEIS  
 > Swifts ```nil``` ist nicht das gleiche ```nil``` wie in Objective-C. In Objective-C ist ```nil``` ein Zeiger auf ein nicht existierendes Objekt. In Swift ist ```nil``` kein Zeiger, es ist die Absenz eines Wertes eines bestimmten Typs. Optionale Werte irgend eines Typs können auf ```nil``` gesetzt werden, nicht nur Objekttypen.
 
-### If-Anweisung und erzwungenes Auspacken
+### If-Anweisung und erzwungenes Auspacken (If Statements and Forced Unwrapping)
 
 Du kannst eine ```if``` Anweisung verwenden um herauszufinden, ob ein optionaler Typ einen Wert beinhaltet. Dies machst du, indem du den optionalen Wert gegen ```nil``` prüfst. Du kannst diese Prüfung mit dem "gleich" Operator (```==```) oder dem "nicht gleich" Operator (```!=```) durchführen.
 
@@ -554,7 +554,7 @@ Für mehr Infos zur ```if```-Anweisung, siehe [Kontrollfluss](TO BE DEFINED).
 > HINWEIS  
 > Wenn ```!``` auf einen optionalen Typ ohne Inhalt angewendet wird, führt dies zu einem Laufzeitfehler. Stelle immer sicher, dass ein Wert vorhanden ist, bevor du versuchst darauf zuzugreifen.
 
-### Binden von optionalen Werten
+### Binden von optionalen Werten (Optional Binding)
 
 Du kannst _optionale Werte binden_ um herauszufinden, ob darin ein Wert enthalten ist. Wenn ja, wird der Wert direkt als temporäre Konstante oder Variable zur Verfügung gestellt. Die Bindung von optionalen Werten kann mit ```if``` und ```while``` Anweisungen verwendet werden. Der Inhalt eines optionalen Wertes wird geprüft und sofern vorhanden direkt in eine Konstante oder Variable zu extrahiert. Dies geschieht alles als eine einzelne Aktion. ```if``` und ```while``` Anweisungen sind unter [Kontrollfluss](TO BE DEFINED) im Detail beschrieben.
 
@@ -592,7 +592,7 @@ if let ersteZahl = Int("4"), zweiteZahl = Int("42") where ersteZahl < zweiteZahl
 // Gibt "4 < 42" aus
 ```
 
-### Implizit ausgepackte optionale Typen
+### Implizit ausgepackte optionale Typen (Implicitly Unwrapped Optionals)
 
 Wie oben beschrieben erlauben es optionale Typen, dass eine Konstante oder Variable "kein Wert" haben darf. 
 ```if```-Anweisngen können optionale Typen überprüfen, ob ein Wert existiert und wenn nötig diesen auch direkt binden, damit auf den Wert zugegriffen werden kann.
