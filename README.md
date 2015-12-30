@@ -56,6 +56,10 @@ Quelle: [Englische Dokumentation von Apple](https://developer.apple.com/library/
 
 - [Dokumentenhistorie](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter4_revision_history/01_document_revision_history.md)
 
+### Kapitel 5
+
+- [Glossar](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter5_glossary/01_glossary.md)
+
 ## Contributing
 
 1. Fork it!
