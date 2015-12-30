@@ -688,3 +688,45 @@ Die Funktion ```machEinSandwich()``` in diesem Beispiel wirft einen Fehler, wenn
 Wenn kein Fehler geworfen wurde, wird die ```issEinSandwich()```-Funktion aufgerufen. Wenn ein Fehler geworfen wurde, der dem ```Error.KeinSauberesGeschirrVorhanden```-Fall entspricht, wird die ```geschirrWaschen()```-Funktion aufgerufen. Wenn ein Fehler geworfen wurde, der dem ```Error.ZutatenFehlen```-Fall entspricht, wird die ```lebensmittelEinkaufen(_:)```-Funktion mit dem  ```[String]```-Wert aufgerufen, der vom ```catch```-Muster eingefangen wurde.
 
 Werfen, fangen und weitergeben von Fehlern ist unter [Fehlerbehandlung](TO BE DEFINED) genauer beschrieben.
+
+## Assertionen
+
+In manchen Fällen ist es deinem Code einfach nicht möglich weiterzuarbeiten, da gewisse Bedingen nicht erfüllt sind. In diesen Fällen kannst du eine _Assertion_ in deinem Code auslösen und die Ausführung deines Codes damit verhindern. Du hast damit auch die Möglichkeit die Ursache der fehlenden oder falschen Werte zu analysieren.
+
+### Debugging mit Assertionen
+
+Eine Assertion ist eine Laufzeitprüfung, ob ein boolscher Ausdruck zu ```true``` evaluiert wird. Wortwörtlich genommen _versichert_ eine Assertion, dass eine Bedingung erfüllt ist. Du kannst Assertionen verwenden um sicher zu stellen, dass essentielle Bedinungen erfüllt sind, bevor der Code weiter ausgeführt wird. Wenn deine Bedingung zu ```true``` evaluiert, läuft dein Code normal weiter. Wenn die Bedingung zu ```false``` evaluiert, wird die Ausführung des Codes gestoppt und deine Anwendung wird beendet.
+
+Wenn dein Code eine Assertion auslöst, während er in einer Debugging-Umgebung läuft (z.B. wenn du die Anwendung mit Xcode ausführst), siehst du genau, wo der ungültige Zustand auftrat und du kannst den Zustand deiner Anwendung zum Zeitpunkt der Assertion abfragen. Eine Assertion lässt dich zudem auch eine passende Nachricht angeben, um die Ursache der Assertion zu beschreiben.
+
+Du schreibst eine Assertion in Swift mit der globalen Funktion ```assert(_:_file:line:)```. Du übergibst der funktion einen Ausdruck, der entweder zu ```true``` oder ```false``` evaluiert werden kann. Zudem kannst du eine Nachricht angeben, die ausgegen wird, wenn der Ausdruck zu ```false``` evaluiert wird:
+
+```Swift
+let alter = -3
+assert(alter >= 0, "Das Alter eine Person kann nicht kleiner als 0 sein")
+// Dies löst die Assertion aus, da 'alter' nicht >= 0 ist
+```
+
+In diesem Beispiel wird der Code nur weiter ausgeführt, wenn ```alter >= 0``` zu ```true``` evaluiert wird, d.h. der Wert von ```alter``` nicht negativ ist. Wenn der Wert von ```alter``` negativ _ist_, wie im Code oben, dann wird die Assertion ausgelöst und die Anwendung beendet.
+
+Die Nachricht kann auch weggelassen werden, wie in folgendem Beispiel:
+
+``` Swift
+assert(alter >= 0)
+```
+
+> HINWEIS  
+> Assertionen werden deaktiviert, wenn dein Code mit Optimierungen kompiliert wird, zum Beispiel wenn du eine Release-Konfiguration in Xcode verwendet.
+
+### Wann werden Assertionen verwendet?
+
+Verwende Assertionen immer dann, wenn eine Bedingung potentiell nicht erfüllt ist, aber zwingend erfüllt werden muss, dass der Code weiter ausgeführt werden kann. Passende Szenarios für Assertionsprüfungen beinhalten:
+
+* Ein Index wird an eine Indexliste übergeben, aber der Index ist entweder zu hoch oder zu tief.
+* Ein Wert wird an eine Funktion übergeben, aber die Funktion kann aufgrund eines ungültigen Wertes ihre Aufgabe nicht erfüllen.
+* Ein optionaler Wert enthält aktuell ```nil```, aber ein nicht-```nil``` Wert ist zwingend notwendig um den nachfolgenden Code auszuführen.
+
+Für weitere Infos siehe [Index](TO BE DEFINED) und [Funktionen](TO BE DEFINED)
+
+> HINWEIS  
+> Assertionen sorgen dafür, dass deine Anwendung beendet wird. Sie sind kein Ersatz dafür, dass du deinen Code so schreibst, dass ungültige Situationen gar nicht erst eintreten. Es gibt aber trotzdem Fälle, in denen ungültige Zustände möglich sind. In diesen Fällen kann mit Assertionen effektiv sichergestellt werden, dass diese Zustände schon während der Entwicklung entdeckt werden, bevor deine Anwendung veröffentlicht wird.
