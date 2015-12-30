@@ -636,3 +636,55 @@ if let definitivEinString = wahrscheinlichEinString {
 
 > HINWEIS  
 > Verwende keinen implizit ausgepackten optionalen Typ, wenn die Variable zu einem späteren Zeitpunkt ```nil``` beinhalten könnte. Verwende immer einen normalen optionalen Typ für Variablen, wenn du sie während ihrer Lebenszeit auf ```nil``` überprüfen musst.
+
+## Fehlerbehandlung
+
+Mittels Fehlerbehandlung kannst du auf Fehler reagieren, die in deinem Programm während der Ausführung auftreten können.
+
+Optionale Werte können dir mit dem vorhandensein, bzw. dem nicht-vorhandensein eines Wertes mitteilen, ob eine Funktion erfolgreich war oder nicht. Via Fehlerbehandlung kannst du den Grund für den Fehler ermitteln und wenn nötig an einen anderen Teil deines Programmes weitergeben.
+
+Wenn in einer Funktion ein Fehler auftritt, _wirft_ sie einen Fehler. Der Aufrufer der Funktion kann den Fehler _fangen_ und entsprechend darauf reagieren.
+
+```Swift
+func kannEinenFehlerWerfen() throws {
+    // Diese Funktion kann einen Fehler werfen, muss aber nicht
+}
+```
+
+Eine Funktion gibt via ```throws```-Schlüsselwort in der Deklaration an, dass sie einen Fehler werfen kann. Wenn du eine Funktion aufrufst, die einen Fehler werfen kann, fügst du das ```try```-Schlüsselwort vor den Ausdruck hinzu.
+
+Swift gibt Fehler automatisch aus dem aktuellen Definitionsbereich weiter, bis er von einer ```catch```-Anweisung behandelt wird.
+
+```Swift
+do {
+    try kannEinenFehlerWerfen()
+    // Es wurde kein Fehler geworfen
+} catch {
+    // Es wurde ein Fehler geworfen
+}
+```
+
+Die ```do```-Anweisung erstellt einen neuen Definitionsbereich, welcher es ermöglicht den Fehler an eine oder mehrere ```catch```-Anweisungen zu übergeben.
+
+Hier ist ein Beispiel, wie mittels der Fehlerbehandlung auf verschiedene Fehlerbedingungen reagiert werden kann:
+
+```Swift
+func machEinSandwich() throws {
+    // ...
+}
+
+do {
+    try machEinSandwich()
+    issEinSandwich()
+} catch Error.KeinSauberesGeschirrVorhanden {
+    geschirrWaschen()
+} catch Error.ZutatenFehlen(let zutaten) {
+    lebensmittelEinkaufen(zutaten)
+}
+```
+
+Die Funktion ```machEinSandwich()``` in diesem Beispiel wirft einen Fehler, wenn kein sauberes Geschirr vorhanden ist oder Zutaten fehlen. Da ```machEinSandwich()``` einen Fehler werfen kann, ist der Funktion das ```try```-Schlüsselwort vorangestellt. Durch Umschliessen des Funktionsaufrufes mit einer ```do```-Anweisung, können alle geworfenen Fehler an die vorhandenen ```catch```-Anweisungen übergeben werden.
+
+Wenn kein Fehler geworfen wurde, wird die ```issEinSandwich()```-Funktion aufgerufen. Wenn ein Fehler geworfen wurde, der dem ```Error.KeinSauberesGeschirrVorhanden```-Fall entspricht, wird die ```geschirrWaschen()```-Funktion aufgerufen. Wenn ein Fehler geworfen wurde, der dem ```Error.ZutatenFehlen```-Fall entspricht, wird die ```lebensmittelEinkaufen(_:)```-Funktion mit dem  ```[String]```-Wert aufgerufen, der vom ```catch```-Muster eingefangen wurde.
+
+Werfen, fangen und weitergeben von Fehlern ist unter [Fehlerbehandlung](TO BE DEFINED) genauer beschrieben.
