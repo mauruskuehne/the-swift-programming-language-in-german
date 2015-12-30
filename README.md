@@ -64,6 +64,47 @@ Quelle: [Englische Dokumentation von Apple](https://developer.apple.com/library/
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
+### Formatierung von Texten
+
+Die Formatierung wird soweit wie möglich aus dem Originaltext übernommen. Wenn z.B. Worte im Original kursiv sind, werden sie auch in der übersetzten Version kursiv geschrieben. Das Gleiche gilt auch für alle anderen Formatierungen.
+Für eine einheitliche Darstellung sollten überall folgende Formate verwendet werden:
+
+Überschriften werden als h1, h2, h3, usw. definiert. Begonnen wird mit h1 für den Seitentitel (üblicherweise die erste Überschrift im Text).  
+Beispiel:  
+```markdown
+# Die Grundlagen  
+## Konstanten und Variablen  
+### Konstanten und Variablen deklarieren  
+```
+_Wichtige_ Worte werden kursiv formatiert:  
+Beispiel:  
+```markdown
+_Wort_
+```
+
+Swift-```Schlüsselwörter``` oder Namen von ```Konstanten``` / ```Variablen``` innerhalb eines Textes werden als Codeblock formatiert.  
+Beispiel:  
+```markdown
+... mit dem ```var``` Schlüsselwort ...
+```
+
+Hinweistexte werden als Blockquotes formatiert.  
+Beispiel:  
+```markdown
+> Hinweis:  
+> Ich bin ein Hinweistext
+```
+
+Eigenständige / mehrzeilige Codebeispiele werden als Swift-Codeblock formatiert.  
+Beispiel:  
+<pre>
+```Swift  
+let pi = 3.14159  
+```
+</pre>
+
+Weitere Infos zum Verfassen von Texten in Markdown gibt es im GitHub [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) 
+
 ## History
 
 
