@@ -39,8 +39,8 @@ Du kannst mehrere Konstanten oder mehrere Variablen direkt in einer Zeile deklar
 var x = 0.0, y = 0.0, z = 0.0
 ```
 
->Hinweis: 
-Wenn sich ein Wert nicht verändert, deklariere diesen immer als Konstante mit dem ```let```Schlüsselwort. Verwende Variablen nur für Werte, welche später verändert werden müssen.
+> HINWEIS  
+> Wenn sich ein Wert nicht verändert, deklariere diesen immer als Konstante mit dem ```let```Schlüsselwort. Verwende Variablen nur für Werte, welche später verändert werden müssen.
 
 ### Typhinweise
 
@@ -70,8 +70,8 @@ Du kannst mehrere Variablen vom gleichen Typ auf einmal deklarieren. Schreibe di
 var rot, grün, blau: Double
 ```
 
->Hinweis:
-In der Praxis verwendest du die Typhinweise nur selten. Wenn du einer Variable oder Konstante direkt bei der Deklaration einen Initialwert mitgibst, kann Swift in den meisten Fällen den Typ direkt ableiten (weitere Details findest du unter <a href="TO BE DEFINED">Typsicherheit und Typinferenz</a>. Im ```willkommensNachricht``` Beispiel oben wurde kein Initialwert angegeben, der Typ wurde deshalb per Typhinweis definiert und nicht aus einem Initialwert abgeleitet.
+> HINWEIS  
+> In der Praxis verwendest du die Typhinweise nur selten. Wenn du einer Variable oder Konstante direkt bei der Deklaration einen Initialwert mitgibst, kann Swift in den meisten Fällen den Typ direkt ableiten (weitere Details findest du unter <a href="TO BE DEFINED">Typsicherheit und Typinferenz</a>. Im ```willkommensNachricht``` Beispiel oben wurde kein Initialwert angegeben, der Typ wurde deshalb per Typhinweis definiert und nicht aus einem Initialwert abgeleitet.
 
 ### Benennung von Konstanten und Variablen
 
@@ -87,7 +87,8 @@ Die Namen von Konstanten und Variablen dürfen keine Leerzeichen, mathematische 
 
 Nachdem du einmal eine Konstante oder Variable mit einem bestimmten Typ deklariert hast, kannst du sie nicht erneut deklarieren. Das heisst, du kannst sie nicht verändern um einen anderen Typ darin zu speichern. Du kannst auch keine Variablen in Konstanten oder Konstanten in Variablen umwandeln.
 
->Hinweis: Wenn du eine Konstante oder Variable gleich nennen möchtest wie ein Swift-Schlüsselwort, musst du das Schlüsselwort mit einfachen Anführungszeichen (`) umschliessen. Dies solltest du aber wenn möglich vermeiden.
+> HINWEIS  
+> Wenn du eine Konstante oder Variable gleich nennen möchtest wie ein Swift-Schlüsselwort, musst du das Schlüsselwort mit einfachen Anführungszeichen (`) umschliessen. Dies solltest du aber wenn möglich vermeiden.
 
 Du kannst den Wert einer existierenden Variable auf einen anderen kompatiblen Wert ändern. In diesem Beispiel wird der Wert von ```freundlichesWillkommen``` von ```Hallo!``` auf ```Bonjour!``` geändert:
 
@@ -123,7 +124,8 @@ print("Der aktuelle Wert von freundlichesWillkommen ist \(freundlichesWillkommen
 // Ausgabe: "Der aktuelle Wert von freundlichesWillkommen ist Bonjour!"
 ```
 
->Hinweis: Weitere Informationen zur Verwendung der Stringinterpolation findest du unter <a href="TO BE DEFINED">String Interpolation</a>.
+> HINWEIS  
+> Weitere Informationen zur Verwendung der Stringinterpolation findest du unter <a href="TO BE DEFINED">String Interpolation</a>.
 
 ### Kommentare
 
@@ -195,8 +197,8 @@ Zusätzlich bietet Swift mit ```UInt``` weiteren vorzeichenlosen Integer-Typ. Di
 * Auf einer 32-Bit Plattform hat ```UInt``` die gleiche Grösse wie ```UInt32```
 * Auf einer 64-Bit Plattform hat ```UInt``` die gleiche Grösse wie ```UInt64```
 
->Hinweis: 
-Verwende ```UInt``` nur, wenn du wirklich einen vorzeichenlosen Integer-Typ von der Grösse der nativen Busbreite benötigst. Wenn dies nicht der Fall ist, solltest du ```Int``` verwenden. Dies auch wenn du weisst, dass du darin keine negativen Werte speichern wirst. Konsistente Verwendung von ```Int``` für ganzzahlige Werte macht deinen Code kompatibler, benötigt keine Konvertierungen zwischen den Integer-Typen und ermöglicht die häufigere Verwendung der Typinferenz (siehe <a href="TO BE DEFINED">Typsicherheit und Typinferenz</a>).
+> HINWEIS  
+> Verwende ```UInt``` nur, wenn du wirklich einen vorzeichenlosen Integer-Typ von der Grösse der nativen Busbreite benötigst. Wenn dies nicht der Fall ist, solltest du ```Int``` verwenden. Dies auch wenn du weisst, dass du darin keine negativen Werte speichern wirst. Konsistente Verwendung von ```Int``` für ganzzahlige Werte macht deinen Code kompatibler, benötigt keine Konvertierungen zwischen den Integer-Typen und ermöglicht die häufigere Verwendung der Typinferenz (siehe <a href="TO BE DEFINED">Typsicherheit und Typinferenz</a>).
 
 ### Fliesskommazahlen
 
@@ -207,8 +209,8 @@ Fliesskommazahlen-Typen können einen viel grösseren Zahlenbereich abdecken als
 * ```Double``` repräsentiert eine 64-Bit Fliesskommazahl
 * ```Float``` repräsentiert eine 32-Bit Fliesskommazahl
 
->Hinweis:
-```Double``` hat eine Genauigkeit von mindestens 15 Dezimalstellen, die Genauigkeit von ```Float``` kann unter Umständen bei nur 6 Dezimalstellen liegen. Welchen Typ du verwenden sollst hängt von der Art und der Grösse der Werte ab mit denen du arbeitest. In Situationen wo beide Typen verwendet werden könnten, solltest du ```Double``` verwenden.
+> HINWEIS  
+> ```Double``` hat eine Genauigkeit von mindestens 15 Dezimalstellen, die Genauigkeit von ```Float``` kann unter Umständen bei nur 6 Dezimalstellen liegen. Welchen Typ du verwenden sollst hängt von der Art und der Grösse der Werte ab mit denen du arbeitest. In Situationen wo beide Typen verwendet werden könnten, solltest du ```Double``` verwenden.
 
 ### Typsicherheit und Typinferenz
 
@@ -347,7 +349,7 @@ let integerPi = Int(pi)
 
 Bei dieser Art der Konvertierung in Ganzzahlen werden die Nachkommastellen der Fliesskommazahlen abgeschnitten. Das bedeutet, aus ```4.75``` wird ```4``` und aus ```-3.9``` wird ```-3```.
 
-> HINWEIS
+> HINWEIS  
 > Die Kombinationsregeln für numerische Konstanten und Variablen unterscheiden sich von denen für numerische Literale. Das Literal ```3``` kann direkt mit dem Literal ```0.14159``` addiert werden, da die Literale keinen expliziten Typ haben. Ihr Typ wird erst bei der Evaluation durch den Compiler festgelegt.
 
 ## Typalias
@@ -473,7 +475,7 @@ print("Die Statusnachricht lautet \(http404Fehler.nachricht)")
 
 Tupel sind besonders nützlich als Rückgabewert von Funktionen. Eine Funktion, die versucht eine Webseite zu laden, könnte einen ```(Int, String)``` Tupel zurückgeben, um den Erfolg oder Fehler beim Laden der Seite zu beschreiben. Durch die Rückgabe von zwei separaten Werten (mit je einem eigenen Typ), kann die Funktion mehr Informationen über das Ergebnis zurückgeben, als nur mit einem einzelnen Wert. Weitere Informationen dazu findest du im Abschnitt [Funktionen mit mehreren Rückgabewerten](TO BE DEFINED)
 
-> HINWEIS
+> HINWEIS  
 Tupel sind nützlich für eine temporäre Gruppierung von zusammengehörenden Werten. Sie sind nicht dafür gemacht, komplexe Datenstrukturen aufzubauen. Wenn du die Datenstruktur über längere Zeit benötigst, solltest du sie stattdessen als Klasse oder als Struktur modellieren. Weitere Informationen dazu findest du im Abschnitt [Klassen und Strukturen](TO BE DEFINED).
 
 ## Optionale Typen
@@ -486,7 +488,7 @@ _oder_
 
 * Es gibt _keinen_ Wert
 
-> HINWEIS
+> HINWEIS  
 > Das Konzept von optionalen Typen gibt es in C oder Objective-C nicht. Man kann sie am ehesten mit der Objective-C Funktion vergleichen, dass Methoden ```nil``` anstelle eines Objektes zurückgeben können. ```nil``` bedeutet in diesem Fall "es ist kein gültiges Objekt vorhanden". Dies funktioniert aber nur für Objekte, nicht für Strukturen, primitiven Datentypen oder Enumerationswerten. Für diese Typen müssen Objective-C Methoden einen Spezialwert definieren und zurückgeben (zum Beispiel ```NSNotFound```) um das Fehlen eines Wertes anzudeuten. Dieser Ansatz setzt voraus, dass der Aufrufer der Methode weiss, dass es spezielle Werte gibt, die er überprüfen muss. Swifts optionale Typen ermöglichen es dir die Absenz eines Wertes für _alle Typen_ zu definieren. Du musst keine speziellen Konstanten definieren.
 
 Hier ist ein Beispiel wie mit Hilfe von optionalen Typen die Absenz eines Wertes behandelt werden kann. Swifts ```Int``` hat einen Initialisierer, welcher versucht ein ```String```-Wert in einen ```Int```-Wert zu konvertieren. Es kann aber nicht jeder Text in eine Ganzzahl konvertiert werden. Der Text ```"123"``` kann in den numerischen Wert ```123``` konvertiert werden, aber der Text ```"Hallo, Welt"``` hat keinen offensichtlichen numerischen Wert.
@@ -512,7 +514,7 @@ serverResponseCode = nil
 // serverResponseCode beinhaltet jetzt keinen Wert mehr
 ```
 
-> HINWEIS
+> HINWEIS  
 > ```nil``` kann nicht mit nicht-optionalen Konstanten oder Variablen verwendet werden. Wenn eine Konstante oder Variable in deinem Code mit der Absenz eines Wertes umgehen muss, solltest du sie immer als optionalen Wert des entsprechenden Typs deklarieren.
 
 Optionale Variablen werden automatisch mit ```nil``` initialisiert, wenn du ihnen bei der Deklaration keinen Initialwert übergibst.
@@ -522,7 +524,7 @@ var umfrageAntwort: String?
 // umfrageAntwort wurde automatisch auf nil gesetzt
 ```
 
-> HINWEIS
+> HINWEIS  
 > Swifts ```nil``` ist nicht das gleiche ```nil``` wie in Objective-C. In Objective-C ist ```nil``` ein Zeiger auf ein nicht existierendes Objekt. In Swift ist ```nil``` kein Zeiger, es ist die Absenz eines Wertes eines bestimmten Typs. Optionale Werte irgend eines Typs können auf ```nil``` gesetzt werden, nicht nur Objekttypen.
 
 ### If-Anweisung und erzwungenes Auspacken
