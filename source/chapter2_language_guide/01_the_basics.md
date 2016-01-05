@@ -115,7 +115,7 @@ print(freundlichesWillkommen)
 
 Die Funktion ```print(_:separator:terminator:)``` ist eine globale Funktion welche einen oder mehrere Werte je nach Situation in die passende Ausgabe schreibt. In Xcode schreibt die ```print(_:separator:terminator:)``` Funktion beispielsweise in das Konsolen-Ausgabefenster. Die Parameter ```separator``` und ```terminator``` haben Standardwerte, du kannst sie also beim Aufruf der Funktion weglassen. Standardmässig beendet die Funktion die Ausgabe mit einem Zeilenumbruch. Um einen Wert ohne Zeilenumbruch auszugeben, kann als ```terminator```-Wert einfach ein leeres ```String```-Element übergeben werden (Beispiel: ```print(einWert, terminator: "")```). Weitere Informationen zu Standardwerten kannst du unter <a href="TO BE DEFINED">Standardwerte für Parameter</a> finden.
 
-Swift verwendet _Stringinterpolation_ um die Namen von Konstanten und Variablen als Platzhalter in einem längeren ```String``` zu verwenden. Swift ersetzt diese Platzhalter mit dem aktuellen Wert der Variable oder Konstante. Umschliesse den Namen in runden Klammern und setze ein Backslash vor die öffnende Klammer:
+Swift verwendet _interpolierte Zeichenfolgen_ um die Namen von Konstanten und Variablen als Platzhalter in einem längeren ```String``` zu verwenden. Swift ersetzt diese Platzhalter mit dem aktuellen Wert der Variable oder Konstante. Umschliesse den Namen in runden Klammern und setze ein Backslash vor die öffnende Klammer:
 
 ```Swift
 print("Der aktuelle Wert von freundlichesWillkommen ist \(freundlichesWillkommen)")
@@ -123,7 +123,7 @@ print("Der aktuelle Wert von freundlichesWillkommen ist \(freundlichesWillkommen
 ```
 
 > HINWEIS  
-> Weitere Informationen zur Verwendung der Stringinterpolation findest du unter <a href="TO BE DEFINED">String Interpolation</a>.
+> Weitere Informationen zur Verwendung von interpolierten Zeichenfolgen findest du unter <a href="TO BE DEFINED">interpolierte Zeichenfolgen</a>.
 
 ### Kommentare
 
@@ -499,7 +499,7 @@ let konvertierteZahl = Int(vielleichtEineZahl)
 // konvertierteZahl hat den abgeleiteten Typ "Int?", oder "optionaler Int"
 ```
 
-Da der Initialisierer fehlschlagen könnte, gibt er einen _optionalen_ ```Int``` zurück anstatt eines normalen ```Int```. Ein optionaler ```Int``` wird als ```Int?``` bezeichnet, nicht als ```Int```. Das Fragezeichen gibt an, dass der enthaltene Wert optional ist. Das entweder, dass _irgendein_ ```Int```-Wert enthalten ist oder _gar kein Wert_. (Es kann nichts anderes beinhalten. Es ist also sicher kein ```Bool``` oder ```String``` wert darin enthalten. Es enthält entweder einen ```Int```-Wert oder gar nichts).
+Da der Initialisierer fehlschlagen könnte, gibt er einen _optionalen_ ```Int``` zurück anstatt eines normalen ```Int```. Ein optionaler ```Int``` wird als ```Int?``` bezeichnet, nicht als ```Int```. Das Fragezeichen gibt an, dass der enthaltene Wert optional ist. Das entweder, dass _irgendein_ ```Int```-Wert enthalten ist oder _gar kein Wert_. (Es kann nichts anderes beinhalten. Es ist also sicher kein ```Bool```- oder ```String```-Wert darin enthalten. Es enthält entweder einen ```Int```-Wert oder gar nichts).
 
 ### nil
 
