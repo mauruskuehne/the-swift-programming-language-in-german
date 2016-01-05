@@ -25,7 +25,7 @@ let maximaleAnzahlLoginVersuche = 10
 var aktuelleAnzahlVersuche = 0 
 ```
 
-Dieser Code so gelesen werden:
+Dieser Code kann so gelesen werden:
 
 "Deklariere eine neue Konstante namens ```maximaleAnzahlLoginVersuche``` und gib ihr den Wert ```10 ```. Anschliessend deklariere eine neue Variable namens ```aktuelleAnzahlVersuche``` und gib ihr den Initialwert ```0```."
 
