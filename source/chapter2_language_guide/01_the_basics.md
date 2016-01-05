@@ -2,7 +2,7 @@
 
 Swift ist eine neue Programmiersprache für die Entwicklung von iOS, OS X und watchOS Anwendungen. Dir werden aber viele Teile von Swift bekannt vorkommen, wenn du bereits Erfahrung in der Entwicklung mit C oder Objective-C hast.
 
-Swift beinhaltet eigene Versionen aller fundamentaler Datentypen aus C und Objective-C. Dies beinhaltet u.a. ```Int``` für Ganzzahlen, ```Double``` und ```Float``` für Fliesskommazahlen, ```Bool``` für boolsche Werte und ```String``` für Texte. Swift beinhaltet zudem leistungsfähige Versionen der [drei Kollektionen](TO BE DEFINED) ```Array```, ```Set``` und ```Dictionary```.
+Swift beinhaltet eigene Versionen aller fundamentaler Datentypen aus C und Objective-C. Dies beinhaltet u.a. ```Int``` für Ganzzahlen, ```Double``` und ```Float``` für Gleitkommazahlen, ```Bool``` für boolsche Werte und ```String``` für Texte. Swift beinhaltet zudem leistungsfähige Versionen der [drei Kollektionen](TO BE DEFINED) ```Array```, ```Set``` und ```Dictionary```.
 
 Genauso wie C verwendet Swift Variablen, um Werte zu speichern und darauf zu verweisen. Swift macht zudem starken Gebrauch von nicht veränderbaren Variablen, sogenannten Konstanten. Diese Konstanten sind viel mächtiger als die Konstanten in C. Konstanten werden überall in Swift verwendet, um die Verwendung von unveränderbaren Werten einfacher und sicherer zu machen.
 
@@ -198,14 +198,14 @@ Zusätzlich bietet Swift mit ```UInt``` weiteren vorzeichenlosen Integer-Typ. Di
 > HINWEIS  
 > Verwende ```UInt``` nur, wenn du wirklich einen vorzeichenlosen Integer-Typ von der Grösse der nativen Busbreite benötigst. Wenn dies nicht der Fall ist, solltest du ```Int``` verwenden. Dies auch wenn du weisst, dass du darin keine negativen Werte speichern wirst. Konsistente Verwendung von ```Int``` für ganzzahlige Werte macht deinen Code kompatibler, benötigt keine Konvertierungen zwischen den Integer-Typen und ermöglicht die häufigere Verwendung der Typinferenz (siehe <a href="TO BE DEFINED">Typsicherheit und Typinferenz</a>).
 
-### Fliesskommazahlen (Floating-Point Numbers)
+### Gleitkommazahlen (Floating-Point Numbers)
 
-_Fliesskommazahlen_ sind Zahlen mit einem Bruchanteil, also zum Beispiel ```3.14159```, ```0.1``` oder ```-273.15```.
+_Gleitkommazahlen_ sind Zahlen mit einem Bruchanteil, also zum Beispiel ```3.14159```, ```0.1``` oder ```-273.15```.
 
-Fliesskommazahlen-Typen können einen viel grösseren Zahlenbereich abdecken als Integer-Typen. Zudem können sie Zahlen beinhalten die viel grösser oder kleiner sind als in einem ```Int```.  Swift bietet zwei Typen für vorzeichenbehaftete Fliesskommazahlen:
+Gleitkommazahlen-Typen können einen viel grösseren Zahlenbereich abdecken als Integer-Typen. Zudem können sie Zahlen beinhalten die viel grösser oder kleiner sind als in einem ```Int```.  Swift bietet zwei Typen für vorzeichenbehaftete Gleitkommazahlen:
 
-* ```Double``` repräsentiert eine 64-Bit Fliesskommazahl
-* ```Float``` repräsentiert eine 32-Bit Fliesskommazahl
+* ```Double``` repräsentiert eine 64-Bit Gleitkommazahl
+* ```Float``` repräsentiert eine 32-Bit Gleitkommazahl
 
 > HINWEIS  
 > ```Double``` hat eine Genauigkeit von mindestens 15 Dezimalstellen, die Genauigkeit von ```Float``` kann unter Umständen bei nur 6 Dezimalstellen liegen. Welchen Typ du verwenden sollst hängt von der Art und der Grösse der Werte ab mit denen du arbeitest. In Situationen wo beide Typen verwendet werden könnten, solltest du ```Double``` verwenden.
@@ -229,23 +229,23 @@ let sinnDesLeben = 42
 // Der abgeleitete Typ von sinnDesLeben ist Int
 ```
 
-Genauso kannst du bei einem Fliesskommazahl-Literal den Typ weglassen. Swift leitet daraus automatisch ab, dass du ein ```Double``` deklarieren wolltest:
+Genauso kannst du bei einem Gleitkommazahl-Literal den Typ weglassen. Swift leitet daraus automatisch ab, dass du ein ```Double``` deklarieren wolltest:
 
 ```Swift
 let pi = 3.14159
 // Der abgeleitete Typ von pi ist Double
 ```
 
-Swift wählt bei Fliesskommazahlen immer ```Double``` (anstelle von ```Float```).
+Swift wählt bei Gleitkommazahlen immer ```Double``` (anstelle von ```Float```).
 
-Wenn du nun ein Integer-Literal und ein Fliesskommazahl-Literal in einem Ausdruck kombinierst, wird daraus der Typ ```Double``` abgeleitet.
+Wenn du nun ein Integer-Literal und ein Gleitkommazahl-Literal in einem Ausdruck kombinierst, wird daraus der Typ ```Double``` abgeleitet.
 
 ```Swift
 let nochEinPi = 3 + 0.14159
 // Der abgeleitete Typ von nochEinPi ist ebenfalls Double
 ```
 
-Der Literalwert ```3``` an sich hat keinen expliziten Typ. Der passende Typ ```Double``` wird daraus abgeleitet, dass auch eine Fliesskommazahl in der Addition vorhanden ist.
+Der Literalwert ```3``` an sich hat keinen expliziten Typ. Der passende Typ ```Double``` wird daraus abgeleitet, dass auch eine Gleitkommazahl in der Addition vorhanden ist.
 
 ### Numerische Literale
 
@@ -265,7 +265,7 @@ let oktaleZahl = 0o21          // 17 in oktaler Schreibweise
 let hexadezimaleZahl = 0x11    // 17 in hexadezimaler Schreibweise
 ```
 
-Fliesskommazahlen können entweder dezimal (ohne Präfix) oder hexadezimal (mit dem Präfix ```0x```) geschrieben werden. Sie müssen immer auf beiden Seiten des Dezimalpunktes eine (hexadezimale) Zahl haben. Dezimale Fliesskommazahlen können optional auch einen _Exponent_ haben, der durch ein grosses oder kleines ```e``` angegeben wird. Hexadezimale Fliesskommazahlen haben immer einen Exponent, angegeben durch ein grosses oder kleines ```p```.
+Gleitkommazahlen können entweder dezimal (ohne Präfix) oder hexadezimal (mit dem Präfix ```0x```) geschrieben werden. Sie müssen immer auf beiden Seiten des Dezimalpunktes eine (hexadezimale) Zahl haben. Dezimale Gleitkommazahlen können optional auch einen _Exponent_ haben, der durch ein grosses oder kleines ```e``` angegeben wird. Hexadezimale Gleitkommazahlen haben immer einen Exponent, angegeben durch ein grosses oder kleines ```p```.
 
 Für Dezimalzahlen mit einem Exponent ```exp``` wird die Basis mit 10<sup>exp</sup> multipliziert:
 
@@ -277,7 +277,7 @@ Für Hexadezimalzahlen mit einem Exponent ```exp``` wird die Basis mit 2<sup>exp
 * ```0xFp2``` entspricht 15 x 2<sup>2</sup> oder ```60```
 * ```0xFp-2``` entspricht 15 x 2<sup>-2</sup> oder ```3.75```
 
-Alle Fliesskommazahl-Literale in unterem Beispiel haben den Dezimalwert ```12.1875```:
+Alle Gleitkommazahl-Literale in unterem Beispiel haben den Dezimalwert ```12.1875```:
 
 ```Swift
 let dezimalDouble = 12.1875
@@ -285,7 +285,7 @@ let exponentDouble = 1.21875e1
 let hexadezimalDouble = 0xC.3p0
 ```
 
-Numerische Literale können zusätzlich formatiert werden, damit sie leichter lesbar sind. Sowohl Ganzahl- als auch Fliesskommazahl-Werte können mit voranstehenden Nullen aufgefüllt werden oder mit Unterstrichen gruppiert werden. Keine der beiden Formatierungsvarianten verändert den effektiven Wert des Literals:
+Numerische Literale können zusätzlich formatiert werden, damit sie leichter lesbar sind. Sowohl Ganzahl- als auch Gleitkommazahl-Werte können mit voranstehenden Nullen aufgefüllt werden oder mit Unterstrichen gruppiert werden. Keine der beiden Formatierungsvarianten verändert den effektiven Wert des Literals:
 
 ```Swift
 let voranstehendeNullenDouble = 000123.456
@@ -325,9 +325,9 @@ Da nun beide Seiten der Addition vom Typ ```UInt16``` sind, kann die Addition du
 
 ```EinTyp(mitInitialWert)``` ist der übliche Weg um einen Swift-Typ zu initialisieren und einen Initialwert zu übergeben. Hinter den Kulissen hat ```UInt16``` eigentlich einen Initialisierer, der einen ```UInt8``` entgegen nimmt. Dieser wird verwendet um aus dem bestehenden ```UInt8``` einen neuen  ```UInt16``` zu erstellen. Es kann hier nicht irgend ein Typ übergeben werden. Es muss ein Typ sein, für den ```UInt16``` einen Initialisierer bereitstellt. Wie bestehende Typen  (sowie eigene Typdefinitionen) um neue Initialisierer erweitert werden können ist unter <a href="TO BE DEFINED">Extensions</a> beschrieben.
 
-#### Konvertieren von Ganzzahlen und Fliesskommazahlen
+#### Konvertieren von Ganzzahlen und Gleitkommazahlen
 
-Die Konvertierung von Ganzzahlen zu Fliesskommazahlen muss explizit angegeben werden:
+Die Konvertierung von Ganzzahlen zu Gleitkommazahlen muss explizit angegeben werden:
 
 ```Swift
 let drei = 3
@@ -338,14 +338,14 @@ let pi = Double(drei) + punktEinsVierEinsFuenfNeun
 
 In diesem Beispiel wurde die Konstante ```drei``` verwendet, um einen neuen Wert vom Typ ```Double``` zu erstellen. So sind beide Seiten der Addition vom gleichen Typ. Ohne diese Konvertierung kann die Addition nicht durchgeführt werden.
 
-Auch die Konvertierung von Fliesskommazahlen zu Ganzzahlen muss explizit angegeben werden. Ganzzahltypen können mit ```Double``` oder ```Float``` Werten initialisiert werden:
+Auch die Konvertierung von Gleitkommazahlen zu Ganzzahlen muss explizit angegeben werden. Ganzzahltypen können mit ```Double``` oder ```Float``` Werten initialisiert werden:
 
 ```Swift
 let integerPi = Int(pi)
 // integerPi hat den Wert 3 und ist vom Typ Int
 ```
 
-Bei dieser Art der Konvertierung in Ganzzahlen werden die Nachkommastellen der Fliesskommazahlen abgeschnitten. Das bedeutet, aus ```4.75``` wird ```4``` und aus ```-3.9``` wird ```-3```.
+Bei dieser Art der Konvertierung in Ganzzahlen werden die Nachkommastellen der Gleitkommazahlen abgeschnitten. Das bedeutet, aus ```4.75``` wird ```4``` und aus ```-3.9``` wird ```-3```.
 
 > HINWEIS  
 > Die Kombinationsregeln für numerische Konstanten und Variablen unterscheiden sich von denen für numerische Literale. Das Literal ```3``` kann direkt mit dem Literal ```0.14159``` addiert werden, da die Literale keinen expliziten Typ haben. Ihr Typ wird erst bei der Evaluation durch den Compiler festgelegt.
