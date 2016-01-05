@@ -214,7 +214,7 @@ Fliesskommazahlen-Typen können einen viel grösseren Zahlenbereich abdecken als
 
 Swift ist eine _typsichere_ Programmiersprache. Eine typsichere Sprache unterstützt dich dabei, klar zu definieren, mit was für Typen dein Code arbeiten kann. Wenn ein Teil deines Codes einen ```String``` erwartet, kannst du ihm nicht aus Versehen einen ```Int``` übergeben.
 
-Da Swift typsicher ist, werden beim kompilieren _typprüfungen_ durchgeführt und alle unpassenden Typen als Fehler markiert. Dies ermöglicht es dir schon früh im Entwicklungsprozess Fehler zu finden und zu korrigieren.
+Da Swift typsicher ist, werden beim kompilieren _Typprüfungen_ durchgeführt und alle unpassenden Typen als Fehler markiert. Dies ermöglicht es dir schon früh im Entwicklungsprozess Fehler zu finden und zu korrigieren.
 
 Typprüfungen helfen dir Fehler zu vermeiden, wenn du mit Werten verschiedener Typen arbeitest. Dies bedeutet aber nicht, dass du für alle deine Variablen und Konstanten einen Typ bei der Deklaration angeben musst. Wenn du keinen Typ angibst, ermittelt Swift mittels _Typinferenz_ den passenden Typ für die Variable oder Konstante. Typinferenz ermöglicht es dem Compiler den Typ eines Ausdruckes automatisch anhand der von dir angegebenen Werte zu ermitteln.
 
