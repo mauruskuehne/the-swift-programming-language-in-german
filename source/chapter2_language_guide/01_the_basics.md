@@ -14,7 +14,7 @@ Swift ist eine _typsichere_ Sprache. Das bedeutet, die Sprache hilft dir dabei k
 
 ## Konstanten und Variablen (Constants and Variables)
 
-Konstanten und Variablen assoziieren einen Namen (z.B. ```maximaleAnzahlLoginVersuche```oder ```willkommensNachricht```) mit einem Wert eines bestimmten Typs (z.B. die Zahl ```10``` oder den Text ```"Hallo"```). Der Wert einer Konstante kann nicht mehr verändert werden, nachdem er einmal gesetzt wurde. Einer Variablen hingegen kann zu einem späteren Zeitpunkt ein neuer Wert zugewiesen werden.
+Konstanten und Variablen assoziieren einen Namen (z.B. ```maximaleAnzahlLoginVersuche```oder ```willkommensnachricht```) mit einem Wert eines bestimmten Typs (z.B. die Zahl ```10``` oder den Text ```"Hallo"```). Der Wert einer Konstante kann nicht mehr verändert werden, nachdem er einmal gesetzt wurde. Einer Variablen hingegen kann zu einem späteren Zeitpunkt ein neuer Wert zugewiesen werden.
 
 ### Konstanten und Variablen deklarieren
 
@@ -44,22 +44,22 @@ var x = 0.0, y = 0.0, z = 0.0
 
 Du kannst bei der Deklaration einer Variable oder Konstanten einen Typhinweis angeben, um genau zu definieren, was für Werte in der Variable oder Konstanten erlaubt sein sollen. Typhinweise werden nach dem Variablen- oder Konstantennamen angegeben. Schreibe nach dem Namen der Konstante oder Variable einen Doppelpunkt, ein Leerzeichen und anschliessend den Namen des Typs.
 
-Dieses Beispiel definiert einen Typhinweis für die Variable ```willkommensNachricht```. Damit geben wir an, dass darin nur ```String```-Werte gespeichert werden können:
+Dieses Beispiel definiert einen Typhinweis für die Variable ```willkommensnachricht```. Damit geben wir an, dass darin nur ```String```-Werte gespeichert werden können:
 
 ```Swift
-var willkommensNachricht: String
+var willkommensnachricht: String
 ```
 
 Der Doppelpunkt in dieser Deklaration bedeutet so viel wie "... ist vom Typ...", der Code kann also folgendermassen gelesen werden:
 
-"Deklariere eine Variable namens ```willkommensNachricht``` vom Typ ```String```."
+"Deklariere eine Variable namens ```willkommensnachricht``` vom Typ ```String```."
 
 Mit "vom Typ ```String```" ist gemeint, dass irgend ein ```String```-Wert darin gespeichert werden kann. 
 
-Der Variable ```willkommensNachricht``` kann nun irgend ein Textwert zugewiesen werden:
+Der Variable ```willkommensnachricht``` kann nun irgend ein Textwert zugewiesen werden:
 
 ```Swift
-willkommensNachricht = "Hallo"
+willkommensnachricht = "Hallo"
 ```
 
 Du kannst mehrere Variablen vom gleichen Typ auf einmal deklarieren. Schreibe die Variablen dafür kommagetrennt auf einer Zeile und den Typhinweis nach dem letzten Variablennamen:
@@ -69,7 +69,7 @@ var rot, grün, blau: Double
 ```
 
 > HINWEIS  
-> In der Praxis verwendest du die Typhinweise nur selten. Wenn du einer Variable oder Konstante direkt bei der Deklaration einen Initialwert mitgibst, kann Swift in den meisten Fällen den Typ direkt ableiten (weitere Details findest du unter <a href="TO BE DEFINED">Typsicherheit und Typinferenz</a>). Im ```willkommensNachricht``` Beispiel oben wurde kein Initialwert angegeben, der Typ wurde deshalb per Typhinweis definiert und nicht aus einem Initialwert abgeleitet.
+> In der Praxis verwendest du die Typhinweise nur selten. Wenn du einer Variable oder Konstante direkt bei der Deklaration einen Initialwert mitgibst, kann Swift in den meisten Fällen den Typ direkt ableiten (weitere Details findest du unter <a href="TO BE DEFINED">Typsicherheit und Typinferenz</a>). Im ```willkommensnachricht``` Beispiel oben wurde kein Initialwert angegeben, der Typ wurde deshalb per Typhinweis definiert und nicht aus einem Initialwert abgeleitet.
 
 ### Benennung von Konstanten und Variablen
 
