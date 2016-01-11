@@ -56,6 +56,10 @@ Quelle: [Englische Dokumentation von Apple](https://developer.apple.com/library/
 
 - [Dokumentenhistorie](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter4_revision_history/01_document_revision_history.md)
 
+### Kapitel 5
+
+- [Glossar](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter5_glossary/01_glossary.md)
+
 ## Contributing
 
 1. Fork it!
@@ -63,6 +67,66 @@ Quelle: [Englische Dokumentation von Apple](https://developer.apple.com/library/
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
+
+### Formatierung von Texten
+
+Die Formatierung wird soweit wie möglich aus dem Originaltext übernommen. Wenn z.B. Worte im Original kursiv sind, werden sie auch in der übersetzten Version kursiv geschrieben. Das Gleiche gilt auch für alle anderen Formatierungen.
+Für eine einheitliche Darstellung sollten überall folgende Formate verwendet werden:
+
+Überschriften werden als h1, h2, h3, usw. definiert. Begonnen wird mit h1 für den Seitentitel (üblicherweise die erste Überschrift im Text).  
+Beispiel:  
+```markdown
+# Die Grundlagen  
+## Konstanten und Variablen  
+### Konstanten und Variablen deklarieren  
+```
+_Wichtige_ Worte werden kursiv formatiert:  
+Beispiel:  
+```markdown
+_Wort_
+```
+
+Swift-```Schlüsselwörter``` oder Namen von ```Konstanten``` / ```Variablen``` innerhalb eines Textes werden als Codeblock formatiert.  
+Beispiel:  
+```markdown
+... mit dem ```var``` Schlüsselwort ...
+```
+
+Hinweistexte werden als Blockquotes formatiert.  
+Beispiel:  
+```markdown
+> Hinweis:  
+> Ich bin ein Hinweistext
+```
+
+Eigenständige / mehrzeilige Codebeispiele werden als Swift-Codeblock formatiert.  
+Beispiel:  
+<pre>
+```Swift  
+let pi = 3.14159  
+```
+</pre>
+
+Weitere Infos zum Verfassen von Texten in Markdown gibt es im GitHub [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) 
+
+### Übersetzen von Fachwörtern
+
+Sofern möglich werden alle Fachwörter übersetzt, damit die Texte auch mit wenig Englischkenntnissen verständlich sind. In der Swift-Dokumentation kommen aber diverse Fachwörter (z.B. "Optionals") vor, welche nicht direkt übersetzt werden können.  
+Viele der weiterführenden Literatur zu Swift, bzw. sehr viele Webseiten zu Swift sind zudem nur in Englisch vorhanden. Um die Leser beim Verstehen dieser Texte zu unterstützen, werden die englischen Bezeichnungen der Fachwörter beim zugehörigen Beschreibungstext hinzugefügt. Wenn für den Begriff ein eigener Abschnitt existiert, wird die englische Bezeichnung direkt in den Abschnittstitel hinzugefügt. Wenn nicht, steht die englische Bezeichnung bei der ersten Verwendung des Fachwortes. 
+
+Jegliche Vorkommnisse von im Handbuch beschriebenen Fremdwörtern sind auch jeweils mit dem zugehörigen Beschreibungstext verlinkt. Wenn also im Kapitel "Fehlerbehandlung" der Begriff "[Optionale Typen](TO BE DEFINED)" vorkommt, wird dieser direkt mit dem Kapitel "Optionale Typen" verlinkt.  
+Ausnahmen: Im Kapitel in dem das Fremdwort beschrieben wird, muss das Fremdwort nicht nochmals verlinkt werden. Wird ein Begriff innerhalb eines Abschnittes mehrmals verwendet, müssen nicht alle Vorkommnisse des Begriffes verlinkt werden.
+
+Des weiteren wird ein [Glossar](https://github.com/DominicFrei/the-swift-programming-language-in-german/blob/gh-pages/source/chapter5_glossary/01_glossary.md) geführt, in welchem alle Fachwörter nochmals kurz beschrieben sind. Es enthält zudem Links auf die deutsche und die englische Dokumentation.  
+Das Glossar dient zusätzlich als Übersetzungshilfe. Man sollte immer kurz im Glossar nachschlagen, ob nicht bereits eine Übersetzung für ein Fremdwort vorhanden ist. So verhindern wir, dass das gleiche Wort mehrmals / unterschiedlich übersetzt wird.
+
+Ein Glossareintrag beinhaltet mindestens folgende Informationen:
+
+* Deutsche Bezeichnung
+* Englische Bezeichnung
+* Link(s) auf Beschreibung in deutscher Dokumentation
+* Link(s) auf Beschreibung in englischer Dokumentation
+* Kurzbeschreibung in Deutsch
 
 ## History
 
