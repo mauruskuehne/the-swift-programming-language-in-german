@@ -2,7 +2,7 @@
 
 Swift ist eine neue Programmiersprache für die Entwicklung von iOS, OS X und watchOS Anwendungen. Dir werden aber viele Teile von Swift bekannt vorkommen, wenn du bereits Erfahrung in der Entwicklung mit C oder Objective-C hast.
 
-Swift beinhaltet eigene Versionen aller fundamentaler Datentypen aus C und Objective-C. Dies beinhaltet u.a. ```Int``` für Ganzzahlen, ```Double``` und ```Float``` für Gleitkommazahlen, ```Bool``` für boolsche Werte und ```String``` für Texte. Swift beinhaltet zudem leistungsfähige Versionen der [drei Kollektionen](TO BE DEFINED) ```Array```, ```Set``` und ```Dictionary```.
+Swift beinhaltet eigene Versionen aller fundamentaler Datentypen aus C und Objective-C. Dies beinhaltet u.a. ```Int``` für Ganzzahlen, ```Double``` und ```Float``` für Gleitkommazahlen, ```Bool``` für boolsche Werte und ```String``` für Texte. Swift beinhaltet zudem leistungsfähige Versionen der [drei Kollektionen](./04_collection_types.md) ```Array```, ```Set``` und ```Dictionary```.
 
 Genauso wie C verwendet Swift Variablen, um Werte zu speichern und darauf zu verweisen. Swift macht zudem starken Gebrauch von nicht veränderbaren Variablen, sogenannten Konstanten. Diese Konstanten sind viel mächtiger als die Konstanten in C. Konstanten werden überall in Swift verwendet, um die Verwendung von unveränderbaren Werten einfacher und sicherer zu machen.
 
@@ -71,7 +71,7 @@ var rot, grün, blau: Double
 ```
 
 > HINWEIS  
-> In der Praxis verwendest du die Typhinweise nur selten. Wenn du einer Variable oder Konstante direkt bei der Deklaration einen Initialwert mitgibst, kann Swift in den meisten Fällen den Typ direkt ableiten (weitere Details findest du unter <a href="TO BE DEFINED">Typsicherheit und Typinferenz</a>). Im ```willkommensnachricht``` Beispiel oben wurde kein Initialwert angegeben, der Typ wurde deshalb per Typhinweis definiert und nicht aus einem Initialwert abgeleitet.
+> In der Praxis verwendest du die Typhinweise nur selten. Wenn du einer Variable oder Konstante direkt bei der Deklaration einen Initialwert mitgibst, kann Swift in den meisten Fällen den Typ direkt ableiten (weitere Details findest du unter [Typsicherheit und Typinferenz](#type_safety_and_type_inference)). Im ```willkommensnachricht``` Beispiel oben wurde kein Initialwert angegeben, der Typ wurde deshalb per Typhinweis definiert und nicht aus einem Initialwert abgeleitet.
 
 ### Benennung von Konstanten und Variablen
 
@@ -115,7 +115,7 @@ print(freundlichesWillkommen)
 // gibt "Bonjour!" aus
 ```
 
-Die Funktion ```print(_:separator:terminator:)``` ist eine globale Funktion welche einen oder mehrere Werte je nach Situation in die passende Ausgabe schreibt. In Xcode schreibt die ```print(_:separator:terminator:)``` Funktion beispielsweise in das Konsolen-Ausgabefenster. Die Parameter ```separator``` und ```terminator``` haben Standardwerte, du kannst sie also beim Aufruf der Funktion weglassen. Standardmäßig beendet die Funktion die Ausgabe mit einem Zeilenumbruch. Um einen Wert ohne Zeilenumbruch auszugeben, kann als ```terminator```-Wert einfach ein leeres ```String```-Element übergeben werden (Beispiel: ```print(einWert, terminator: "")```). Weitere Informationen zu Standardwerten kannst du unter [Standardwerte für Parameter](TO BE DEFINED) finden.
+Die Funktion ```print(_:separator:terminator:)``` ist eine globale Funktion welche einen oder mehrere Werte je nach Situation in die passende Ausgabe schreibt. In Xcode schreibt die ```print(_:separator:terminator:)``` Funktion beispielsweise in das Konsolen-Ausgabefenster. Die Parameter ```separator``` und ```terminator``` haben Standardwerte, du kannst sie also beim Aufruf der Funktion weglassen. Standardmäßig beendet die Funktion die Ausgabe mit einem Zeilenumbruch. Um einen Wert ohne Zeilenumbruch auszugeben, kann als ```terminator```-Wert einfach ein leeres ```String```-Element übergeben werden (Beispiel: ```print(einWert, terminator: "")```). Weitere Informationen zu Standardwerten kannst du unter [Standardwerte für Parameter](./06_functions.md) finden.
 
 Swift verwendet _interpolierte Zeichenfolgen_ um die Namen von Konstanten und Variablen als Platzhalter in einem längeren  ```String``` zu verwenden. Swift ersetzt diese Platzhalter mit dem aktuellen Wert der Variable oder Konstante. Umschließe den Namen in runden Klammern und setze ein Backslash vor die öffnende Klammer:
 
@@ -125,7 +125,7 @@ print("Der aktuelle Wert von freundlichesWillkommen ist \(freundlichesWillkommen
 ```
 
 > HINWEIS  
-> Weitere Informationen zur Verwendung von interpolierten Zeichenfolgen findest du unter <a href="TO BE DEFINED">interpolierte Zeichenfolgen</a>.
+> Weitere Informationen zur Verwendung von interpolierten Zeichenfolgen findest du unter [interpolierte Zeichenfolgen](./03_strings_and_characters.md).
 
 ### Kommentare
 
@@ -200,7 +200,7 @@ Zusätzlich bietet Swift mit ```UInt``` weiteren vorzeichenlosen Integer-Typ. Di
 * Auf einer 64-Bit Plattform hat ```UInt``` die gleiche Größe wie ```UInt64```
 
 > HINWEIS  
-> Verwende ```UInt``` nur, wenn du wirklich einen vorzeichenlosen Integer-Typ von der Größe der nativen Busbreite benötigst. Wenn dies nicht der Fall ist, solltest du ```Int``` verwenden. Dies auch wenn du weißt, dass du darin keine negativen Werte speichern wirst. Konsistente Verwendung von ```Int``` für ganzzahlige Werte macht deinen Code kompatibler, benötigt keine Konvertierungen zwischen den Integer-Typen und ermöglicht die häufigere Verwendung der Typinferenz (siehe <a href="TO BE DEFINED">Typsicherheit und Typinferenz</a>).
+> Verwende ```UInt``` nur, wenn du wirklich einen vorzeichenlosen Integer-Typ von der Größe der nativen Busbreite benötigst. Wenn dies nicht der Fall ist, solltest du ```Int``` verwenden. Dies auch wenn du weißt, dass du darin keine negativen Werte speichern wirst. Konsistente Verwendung von ```Int``` für ganzzahlige Werte macht deinen Code kompatibler, benötigt keine Konvertierungen zwischen den Integer-Typen und ermöglicht die häufigere Verwendung der Typinferenz (siehe [Typsicherheit und Typinferenz](#type_safety_and_type_inference)).
 
 ### Gleitkommazahlen (Floating-Point Numbers)
 <a name="floating_point_numbers"></a>
@@ -329,7 +329,7 @@ let zweitausendUndEins = zweitausend + UInt16(eins)
 
 Da nun beide Seiten der Addition vom Typ ```UInt16``` sind, kann die Addition durchgeführt werden. Der abgeleitete Typ der Konstanten ```zweitausendUndEins``` ist ebenfalls ```UInt16```, da es sich dabei um die Summe von zwei ```UInt16``` Werten handelt.
 
-```EinTyp(mitInitialWert)``` ist der übliche Weg um einen Swift-Typ zu initialisieren und einen Initialwert zu übergeben. Hinter den Kulissen hat ```UInt16``` eigentlich einen Initialisierer, der einen ```UInt8``` entgegennimmt. Dieser wird verwendet um aus dem bestehenden ```UInt8``` einen neuen  ```UInt16``` zu erstellen. Es kann hier nicht irgendein Typ übergeben werden. Es muss ein Typ sein, für den ```UInt16``` einen Initialisierer bereitstellt. Wie bestehende Typen  (sowie eigene Typdefinitionen) um neue Initialisierer erweitert werden können ist unter <a href="TO BE DEFINED">Extensions</a> beschrieben.
+```EinTyp(mitInitialWert)``` ist der übliche Weg um einen Swift-Typ zu initialisieren und einen Initialwert zu übergeben. Hinter den Kulissen hat ```UInt16``` eigentlich einen Initialisierer, der einen ```UInt8``` entgegennimmt. Dieser wird verwendet um aus dem bestehenden ```UInt8``` einen neuen  ```UInt16``` zu erstellen. Es kann hier nicht irgendein Typ übergeben werden. Es muss ein Typ sein, für den ```UInt16``` einen Initialisierer bereitstellt. Wie bestehende Typen  (sowie eigene Typdefinitionen) um neue Initialisierer erweitert werden können ist unter [Extensions](./21_extensions.md) beschrieben.
 
 #### Konvertieren von Ganzzahlen und Gleitkommazahlen
 
@@ -400,7 +400,7 @@ if ruebenSindLecker {
 // Gibt "Ieeh, Rüben sind schrecklich." aus
 ```
 
-Bedingte Anweisungen wie die ```if``` Anweisung werden unter [Kontrollfluss](TO BE DEFINED) detaillierter behandelt. Swifts Typsicherheit verhindert, dass nicht-boolsche Werte anstelle eines ```Bool```s verwendet werden. Das folgende Beispiel führt zu einem Kompilierfehler:
+Bedingte Anweisungen wie die ```if``` Anweisung werden unter [Kontrollfluss](./05_control_flow.md) detaillierter behandelt. Swifts Typsicherheit verhindert, dass nicht-boolsche Werte anstelle eines ```Bool```s verwendet werden. Das folgende Beispiel führt zu einem Kompilierfehler:
 
 ```Swift
 let i = 1
@@ -418,7 +418,7 @@ if i == 1 {
 }
 ```
 
-Das Resultat des Vergleichs ```i == 1``` ist vom Typ ```Bool```, deshalb entstehen keine Probleme bei der Überprüfung der Typen. Vergleiche wie ```i == 1``` werden unter [Basisoperationen](TO BE DEFINED) erläutert.
+Das Resultat des Vergleichs ```i == 1``` ist vom Typ ```Bool```, deshalb entstehen keine Probleme bei der Überprüfung der Typen. Vergleiche wie ```i == 1``` werden unter [Basisoperationen](./02_basic_operations.md) erläutert.
 
 Genauso wie in den anderen Beispielen zu Swifts Typsicherheit, verhindert dieses Verhalten ungewollte Fehler. Sie sorgt zudem dafür, dass die Absicht hinter einem Codeabschnitt immer klar ersichtlich ist.
 
@@ -480,10 +480,10 @@ print("Die Statusnachricht lautet \(http404Fehler.nachricht)")
 // Gibt "Die Statusnachricht lautet OK" aus
 ```
 
-Tupel sind besonders nützlich als Rückgabewert von Funktionen. Eine Funktion, die versucht eine Webseite zu laden, könnte einen ```(Int, String)``` Tupel zurückgeben, um den Erfolg oder Fehler beim Laden der Seite zu beschreiben. Durch die Rückgabe von zwei separaten Werten (mit je einem eigenen Typ), kann die Funktion mehr Informationen über das Ergebnis zurückgeben, als nur mit einem einzelnen Wert. Weitere Informationen dazu findest du im Abschnitt [Funktionen mit mehreren Rückgabewerten](TO BE DEFINED)
+Tupel sind besonders nützlich als Rückgabewert von Funktionen. Eine Funktion, die versucht eine Webseite zu laden, könnte einen ```(Int, String)``` Tupel zurückgeben, um den Erfolg oder Fehler beim Laden der Seite zu beschreiben. Durch die Rückgabe von zwei separaten Werten (mit je einem eigenen Typ), kann die Funktion mehr Informationen über das Ergebnis zurückgeben, als nur mit einem einzelnen Wert. Weitere Informationen dazu findest du im Abschnitt [Funktionen mit mehreren Rückgabewerten](06_functions.md)
 
 > HINWEIS  
-Tupel sind nützlich für eine temporäre Gruppierung von zusammengehörenden Werten. Sie sind nicht dafür gemacht, komplexe Datenstrukturen aufzubauen. Wenn du die Datenstruktur über längere Zeit benötigst, solltest du sie stattdessen als Klasse oder als Struktur modellieren. Weitere Informationen dazu findest du im Abschnitt [Klassen und Strukturen](TO BE DEFINED).
+Tupel sind nützlich für eine temporäre Gruppierung von zusammengehörenden Werten. Sie sind nicht dafür gemacht, komplexe Datenstrukturen aufzubauen. Wenn du die Datenstruktur über längere Zeit benötigst, solltest du sie stattdessen als Klasse oder als Struktur modellieren. Weitere Informationen dazu findest du im Abschnitt [Klassen und Strukturen](./09_classes_and_structures.md).
 
 ## Optionale Typen (Optionals)
 <a name="optionals"></a>
@@ -558,7 +558,7 @@ if konvertierteZahl != nil {
 // Gibt "konvertierteZahl beinhaltet einen ganzzahligen Wert von 123." aus
 ```
 
-Für mehr Infos zur ```if```-Anweisung, siehe [Kontrollfluss](TO BE DEFINED).
+Für mehr Infos zur ```if```-Anweisung, siehe [Kontrollfluss](05_control_flow.md).
 
 > HINWEIS  
 > Wenn ```!``` auf einen optionalen Typ ohne Inhalt angewendet wird, führt dies zu einem Laufzeitfehler. Stelle immer sicher, dass ein Wert vorhanden ist, bevor du versuchst darauf zuzugreifen.
@@ -566,7 +566,7 @@ Für mehr Infos zur ```if```-Anweisung, siehe [Kontrollfluss](TO BE DEFINED).
 ### Binden von optionalen Werten (Optional Binding)
 <a name="optional_binding"></a>
 
-Du kannst _optionale Werte binden_ um herauszufinden, ob darin ein Wert enthalten ist. Wenn ja, wird der Wert direkt als temporäre Konstante oder Variable zur Verfügung gestellt. Die Bindung von optionalen Werten kann mit ```if``` und ```while``` Anweisungen verwendet werden. Der Inhalt eines optionalen Wertes wird geprüft und sofern vorhanden direkt in eine Konstante oder Variable zu extrahiert. Dies geschieht alles als eine einzelne Aktion. ```if``` und ```while``` Anweisungen sind unter [Kontrollfluss](TO BE DEFINED) im Detail beschrieben.
+Du kannst _optionale Werte binden_ um herauszufinden, ob darin ein Wert enthalten ist. Wenn ja, wird der Wert direkt als temporäre Konstante oder Variable zur Verfügung gestellt. Die Bindung von optionalen Werten kann mit ```if``` und ```while``` Anweisungen verwendet werden. Der Inhalt eines optionalen Wertes wird geprüft und sofern vorhanden direkt in eine Konstante oder Variable zu extrahiert. Dies geschieht alles als eine einzelne Aktion. ```if``` und ```while``` Anweisungen sind unter [Kontrollfluss](05_control_flow.md) im Detail beschrieben.
 
 Schreibe die ```if```-Anweisung folgendermaßen, um damit einen optionalen Wert zu binden:
 
@@ -576,7 +576,7 @@ if let konstantenName = optionalerWert {
 }
 ```
 
-Wir können unser ```vielleichtEineZahl``` Beispiel aus [Optionale Typen](TO BE DEFINED) umschreiben, damit es neu den optionalen Wert bindet, anstatt ihn zwingend auszupacken.
+Wir können unser ```vielleichtEineZahl``` Beispiel aus [Optionale Typen](#optionals) umschreiben, damit es neu den optionalen Wert bindet, anstatt ihn zwingend auszupacken.
 
 ```Swift
 if let effektiveZahl = Int(vielleichtEineZahl) {
@@ -612,7 +612,7 @@ Manchmal ist es vom Programmverlauf her klar, dass eine optionale Variable oder 
 
 Diese Art von optionalen Typen werden _implizit ausgepackte optionale Typen_ genannt. Du schreibst so ein Typ, indem du ein Ausrufezeichen (```String!```) anstelle eines Fragezeichen (```String?```) nach den Typ setzt, den du optional machen möchtest.
 
-Implizit ausgepackte optionale Typen sind nützlich, wenn wir wissen, dass ihnen kurz nach ihrer Definition ein Wert zugewiesen wird und sie definitiv für den Rest ihrer Lebenszeit einen Wert haben. Der Hauptanwendungsfall der implizit ausgepackten optionalen Typen in Swift ist bei der Initialisierung von Klassen. Siehe dazu auch [Nicht-besitzende Referenzen und implizit ausgepackte optionale Eigenschaften](TO BE DEFINED)
+Implizit ausgepackte optionale Typen sind nützlich, wenn wir wissen, dass ihnen kurz nach ihrer Definition ein Wert zugewiesen wird und sie definitiv für den Rest ihrer Lebenszeit einen Wert haben. Der Hauptanwendungsfall der implizit ausgepackten optionalen Typen in Swift ist bei der Initialisierung von Klassen. Siehe dazu auch [Nicht-besitzende Referenzen und implizit ausgepackte optionale Eigenschaften](./16_automatic_reference_counting.md)
 
 Hinter den Kulissen handelt es sich bei implizit entpackten optionalen Typen um ganz normale optionale Typen. Einzig mit dem Unterschied, dass sie auch als nicht-optionale Typen verwendet werden können, ohne dass ihr Wert jedes Mal neu ausgepackt werden muss. Das folgende Beispiel zeigt den Unterschied zwischen einem optionalen ```String``` und einem implizit ausgepackten optionalen ```String```, wenn auf den darunterliegenden Wert zugegriffen werden möchte:
 
@@ -700,7 +700,7 @@ Die Funktion ```machEinSandwich()``` in diesem Beispiel wirft einen Fehler, wenn
 
 Wenn kein Fehler geworfen wurde, wird die ```issEinSandwich()```-Funktion aufgerufen. Wenn ein Fehler geworfen wurde, der dem ```Error.KeinSauberesGeschirrVorhanden```-Fall entspricht, wird die ```geschirrWaschen()```-Funktion aufgerufen. Wenn ein Fehler geworfen wurde, der dem ```Error.ZutatenFehlen```-Fall entspricht, wird die ```lebensmittelEinkaufen(_:)```-Funktion mit dem  ```[String]```-Wert aufgerufen, der vom ```catch```-Muster eingefangen wurde.
 
-Werfen, fangen und weitergeben von Fehlern ist unter [Fehlerbehandlung](TO BE DEFINED) genauer beschrieben.
+Werfen, fangen und weitergeben von Fehlern ist unter [Fehlerbehandlung](./18_error_handling.md) genauer beschrieben.
 
 ## Assertionen
 
@@ -739,7 +739,7 @@ Verwende Assertionen immer dann, wenn eine Bedingung potentiell nicht erfüllt i
 * Ein Wert wird an eine Funktion übergeben, aber die Funktion kann aufgrund eines ungültigen Wertes ihre Aufgabe nicht erfüllen.
 * Ein optionaler Wert enthält aktuell ```nil```, aber ein nicht-```nil``` Wert ist zwingend notwendig um den nachfolgenden Code auszuführen.
 
-Für weitere Infos siehe [Index](TO BE DEFINED) und [Funktionen](TO BE DEFINED)
+Für weitere Infos siehe [Index](./12_subscripts.md) und [Funktionen](./06_functions.md)
 
 > HINWEIS  
 > Assertionen sorgen dafür, dass deine Anwendung beendet wird. Sie sind kein Ersatz dafür, dass du deinen Code so schreibst, dass ungültige Situationen gar nicht erst eintreten. Es gibt aber trotzdem Fälle, in denen ungültige Zustände möglich sind. In diesen Fällen kann mit Assertionen effektiv sichergestellt werden, dass diese Zustände schon während der Entwicklung entdeckt werden, bevor deine Anwendung veröffentlicht wird.
