@@ -18,12 +18,3 @@ Operatoren sind entweder unär, binär oder ternär:
 
 Die von Operatoren betroffenen Werte werden _Operanden_ genannt. Im Ausdruck ```1 + 2``` steht das Symbol ```+``` für einen binären Operator und seine zwei Operanden sind die Werte ```1``` und ```2```.
 
-
-Operators are unary, binary, or ternary:
-
-Unary operators operate on a single target (such as -a). Unary prefix operators appear immediately before their target (such as !b), and unary postfix operators appear immediately after their target (such as i++).
-Binary operators operate on two targets (such as 2 + 3) and are infix because they appear in between their two targets.
-Ternary operators operate on three targets. Like C, Swift has only one ternary operator, the ternary conditional operator (a ? b : c).
-The values that operators affect are operands. In the expression 1 + 2, the + symbol is a binary operator and its two operands are the values 1 and 2.
-
-
