@@ -181,6 +181,25 @@ let auchMinusSechs = +minusSechs    // auchMinusSechs entspricht -6
 
 Obwohl der unäre Plusoperator nichts macht, kann er verwendet werden um die Symmetrie im Code zu wahren, wenn du mit dem unären Minusoperator für negative Zahlen arbeitest.
 
+## Zusammengesetzte Zuweisungsoperatoren
+
+Wie in C gibt es auch in Swift _zusammengesetzte Zuweisungsoperatoren_, welche die Zuweisung (```=```) mit einer anderen Operation kombinieren. Ein beispiel dafür ist der _Additions-Zuweisungsoperator_ (```+=```):
+
+```Swift
+var a = 1
+a += 2
+// a hat nun den Wert 3
+```
+
+Der Ausdruck ```a += 2``` ist eine Abkürzung für ```a = a + 2```. Die Addition und die Zuweisung werden in einem Operator kombiniert und werden in einem Schritt ausgeführt.
+
+>HINWEIS  
+Die zusammengesetzten Zuweisungsoperatoren haben keinen Rückgabewert. Du kannst deshalb ```let b = a += 2``` nicht verwenden.
+Dieses Verhalten ist anders als bei den oben erwähnten Inkrement- und Dekrement-Operatoren.
+
+Eine Komplette List der zusammengesetzten Zuweisungsoperatoren findest du unter [Ausdrücke](TO BE DEFINED).
+
+ 
 
 a
 
