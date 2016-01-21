@@ -199,7 +199,44 @@ Dieses Verhalten ist anders als bei den oben erwähnten Inkrement- und Dekrement
 
 Eine Komplette List der zusammengesetzten Zuweisungsoperatoren findest du unter [Ausdrücke](TO BE DEFINED).
 
- 
+## Vergleichsoperatoren
+
+Swift unterstützt alle standard C Vergleichsoperatoren.
+
+* Gleich (```a == b```)
+* Nicht gleich (```a != b```)
+* Grösser als (```a > b```)
+* Kleiner als (```a < b```)
+* Grösser als oder gleich (```a >= b```)
+* Kleiner als oder gleich  (```a <= b```)
+
+>HINWEIS  
+Swift bietet auch zwei _Identitätsoperatoren_ (```===``` und ```!==```), welche prüfen, ob zwei Objektreferenzen auf die gleiche Objektinstanz verweisen. Mehr Informationen findest du unter [Klassen und Strukturen](TO BE DEFINED).
+
+Jeder Vergleichsoperator gibt einen ```Bool``` Wert zurück um anzugeben, ob die Anweisung wahr ist:
+
+```Swift
+1 == 1  // wahr, 1 ist gleich 1
+2 != 1  // wahr, 2 ist nicht gleich 1
+2 > 1   // wahr, 2 ist grösser als 1
+1 < 2   // wahr, 1 ist kleiner als 2
+1 >= 1  // wahr, 1 ist grösser als oder gleich 1
+2 <= 1  // falsch, 2 ist nicht kleiner als oder gleich 1
+```
+
+Vergleichsoperatoren werden oft in Bedingungsanweisungen verwendet, wie zum Beispiel der ```if```-Anweisung:
+
+```Swift
+let name = "welt"
+if name == "welt" {
+    print("Hallo, Welt")
+} else {
+    print("Tut mir leid, \(name), aber ich kenne dich nicht.")
+}
+// Gibt "Hallo, Welt" aus, da name gleich ist wie "welt"
+```
+
+Mehr zur ```if```-Anweisung ist unter [Kontrollfluss](TO BE DEFINED) beschrieben.
 
 a
 
