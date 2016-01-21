@@ -18,3 +18,30 @@ Operatoren sind entweder unär, binär oder ternär:
 
 Die von Operatoren betroffenen Werte werden _Operanden_ genannt. Im Ausdruck ```1 + 2``` steht das Symbol ```+``` für einen binären Operator und seine zwei Operanden sind die Werte ```1``` und ```2```.
 
+## Zuweisungsoperator
+
+Der _Zuweisungsoperator_ (```a = b```) initialisiert oder aktualisiert den Wert von ```a``` mit dem Wert von ```b```:
+
+```Swift
+let b = 10
+var a = 5
+a = b
+// a hat nun den Wert 10
+```
+
+Wenn auf der rechten Seite der Zuweisung ein Tupel mit mehreren Werten ist, können seine Elemente in einem Schritt in mehrere Konstanten oder Variablen zerlegt werden:
+
+```Swift
+let (x, y) = (1, 2)
+// x entspricht 1 und y entspricht 2
+```
+
+Im Gegensatz zu C und Objective-C gibt der Zuweisungsoperator selbst keinen Wert zurück. Die folgende Anweisung ist deshalb nicht gültig:
+
+```Swift
+if x = y {
+  // Dies ist nicht gültig, da x = y keinen Wert zurückgibt
+}
+```
+
+Diese Funktion verhindert, dass der Zuweisungsoperator (```=```) ausversehen anstelle des Vergleichsoperators (```==```) verwendet wird. Swift hilft dir damit, diese Art von Fehlern zu vermeiden.
