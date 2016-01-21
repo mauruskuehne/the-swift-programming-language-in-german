@@ -238,6 +238,47 @@ if name == "welt" {
 
 Mehr zur ```if```-Anweisung ist unter [Kontrollfluss](TO BE DEFINED) beschrieben.
 
+## Ternärer Bedinungsoperator
+
+Der _ternäre Bedinungsoperator_ ist ein spezieller Operator mit drei Teilen in der Form von ```frage ? antwort1 : antwort2```. Er ist eine Abkürzung um eine von beiden Ausdrücken auszuwerten, je nach dem, ob ```frage``` wahr oder falsch ist. Wenn ```frage``` wahr ist, wird ```antwort1``` ausgewertet, sonst ```antwort2```. Der Wert des Ausdrucks wird anschliessend zurückgegeben.
+
+Der ternäre Bedingungsoperator ist eine Abkürzung für untenstehenden Code:
+
+```Swift
+if frage {
+    antwort1
+} else {
+    antwort2
+}
+```
+
+Hier ist ein Beispiel, welches die Höhe für eine Tabellenzeile berechnet. Die Zeilenhöhe soll 50 Punkte höher sein als der Inhalt, wenn die Zeile eine Überschrift enthält. Wenn nicht, soll sie 20 Punkte grösser sein:
+
+```Swift
+let inhaltsHoehe = 40
+let hatUeberschrift = true
+let zeilenHoehe = inhaltsHoehe + (hatUeberschrift ? 50 : 20)
+// zeilenHoehe hat den Wert 90
+```
+
+Das obige Beispiel ist eine abgekürzte Variante von untenstehendem Code:
+
+```Swift
+let inhaltsHoehe = 40
+let hatUeberschrift = true
+var zeilenHoehe = inhaltsHoehe
+if hatUeberschrift {
+    zeilenHoehe = zeilenHoehe + 50
+} else {
+    zeilenHoehe = zeilenHoehe + 20
+}
+// zeilenHoehe hat den Wert 90
+```
+
+Dank dem ternären Bedingungsoperator kann ```zeilenHoehe``` mit einer Zeile Code auf den richtigen Wert gesetzt werden. Dies ist kompakter als das zweite Beispiel. Zudem muss ```zeilenHoehe``` nicht als Variable definiert werden, da der Wert nicht mehr in der ```if```-Anweisung verändert wird.
+
+Der ternäre Bedingungsoperator ist eine effiziente Abkürzung um zwischen zwei Ausdrücken zu wählen. Verwende den ternären Bedingungsoperator aber mit Vorsicht. Seine Kompaktheit kann zu schwer lesbarem Code führen, wenn er zu oft eingesetzt wird. Vermeide es, mehrere ternäre Bedinungsoperatoren in einer Zeile zu kombinieren.
+
 a
 
 a
