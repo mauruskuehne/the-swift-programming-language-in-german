@@ -1,8 +1,8 @@
 # Basisoperatoren
 
-Ein Operator ist ein spezielles Zeichen oder Phrase, mit welchem du Werte prüfen, verändern oder kombinieren kannst. Der Additionsoperator (```+```) beispielsweise zählt zwei Zahlen zusammen (wie in ```let i = 1 + 2```). Ein komplexeres Beispiel wäre der logische AND Operator ```&&``` (wie in ```if zahlenCodeEingegeben && retinaScanErfolgreich```) oder dem Inkrementoperator ```++i```, welcher eine Abkürzung für die Addition von ```1``` zu ```i``` ist. 
+Ein Operator ist ein spezielles Zeichen oder Phrase, mit welchem du Werte prüfen, verändern oder kombinieren kannst. Der Additionsoperator (```+```) beispielsweise zählt zwei Zahlen zusammen (wie in ```let i = 1 + 2```). Ein komplexeres Beispiel wäre der logische AND Operator ```&&``` (wie in ```if zahlenCodeEingegeben && retinaScanErfolgreich```) oder dem Inkrementoperator ```++i```, welcher eine Abkürzung für die Addition von ```1``` zu ```i``` ist.
 
-Swift unterstützt die meisten standard C-Operatoren und verbessert einige Möglichkeiten um häufige Programmierfehler zu verhindern. Der Zuweisungsoperator (```=```) gibt keinen Wert zurück, so wird er nicht aus Versehen anstelle des Vergleichsoperators (```==```) verwendet. Arithmetische Operatoren (```+```, ```-```, ```*```, ```/```, ```%``` usw.) ermitteln und verhindern Wertüberläufe. So treten keine unerwarteten Resultate auf, wenn mit Zahlen gearbeitet wird, welche grösser oder kleiner werden als der Wertebereich des Typs, in dem sie gespeichert sind. Du kannst Wertüberläufe explizit erlauben, indem du die [Wertüberlauf-Operatoren](TO BE DEFINED) von Swift verwendest.
+Swift unterstützt die meisten Standard C-Operatoren und verbessert einige Möglichkeiten um häufige Programmierfehler zu verhindern. Der Zuweisungsoperator (```=```) gibt keinen Wert zurück, so wird er nicht aus Versehen anstelle des Vergleichsoperators (```==```) verwendet. Arithmetische Operatoren (```+```, ```-```, ```*```, ```/```, ```%``` usw.) ermitteln und verhindern Wertüberläufe. So treten keine unerwarteten Resultate auf, wenn mit Zahlen gearbeitet wird, welche größer oder kleiner werden als der Wertebereich des Typs, in dem sie gespeichert sind. Du kannst Wertüberläufe explizit erlauben, indem du die [Wertüberlauf-Operatoren](TO BE DEFINED) von Swift verwendest.
 
 Im Gegensatz zu C kannst du Resteberechnungen (```%```) von Gleitkommazahlen durchführen. Swift bietet zudem zwei in C nicht vorhandene Bereichsoperatoren (```a..<b``` und ```a...b```) zur Abbildung von Wertebereichen.
 
@@ -62,9 +62,9 @@ Swift unterstützt die vier _arithmetischen Standardoperatoren_ für alle Zahlen
 10.0 / 2.5  // entspricht 4.0
 ```
 
-Im Gegensatz zu C und Objective C erlauben die arithmetischen Operatoren standardmässig kein Überlauf der Werte. Wenn du dieses Verhalten benötigst, kannst du Swifts Überlaufoperatoren verwenden (wie zum Beispiel ```a &+ b```). Siehe dazu [Überlaufsoperatoren](TO BE DEFINED).
+Im Gegensatz zu C und Objective-C erlauben die arithmetischen Operatoren standardmäßig kein Überlauf der Werte. Wenn du dieses Verhalten benötigst, kannst du Swifts Überlaufoperatoren verwenden (wie zum Beispiel ```a &+ b```). Siehe dazu [Überlaufoperatoren](TO BE DEFINED).
 
-Der Additionsoperator wird auch für ```String```-Konkatenierung verwenden:
+Der Additionsoperator wird auch für das zusammenhängen von ```String```s verwendet:
 
 ```Swift
 "Hallo, " + "Welt" // entspricht "Hallo, Welt"
@@ -75,7 +75,7 @@ Der Additionsoperator wird auch für ```String```-Konkatenierung verwenden:
 Der _Restoperator_ (```a % b```) berechnet wie oft ```b``` in ```a``` Platz hat und gibt den übrig gebliebenen Wert zurück (den _Rest_).
 
 >HINWEIS  
-Der RestOperator (```%```) ist in anderen Sprachen als _Modulo-Operator_ bekannt. Aufgrund des Verhaltens mit negativen Zahlen handelt es sich in Swift aber genau genommen um einen Restoperator anstelle eines Modulo-Operators.
+Der Restoperator (```%```) ist in anderen Sprachen als _Modulo-Operator_ bekannt. Aufgrund des Verhaltens mit negativen Zahlen handelt es sich in Swift aber genau genommen um einen Restoperator anstelle eines Modulo-Operators.
 
 Schauen wir uns an, wie der Restoperator funktioniert. Um ```9 % 4``` zu berechnen, müssen wir zuerst herausfinden, wie oft ```4``` in ```9``` Platz hat:
 
@@ -83,7 +83,7 @@ Schauen wir uns an, wie der Restoperator funktioniert. Um ```9 % 4``` zu berechn
 
 ```4``` hat zwei Mal Platz in ```9```, der Rest beträgt ```1``` (in Orange dargestellt).
 
-In Swift wird das folgendermassen geschrieben:
+In Swift wird das folgendermßen geschrieben:
 
 ```Swift
 9 % 4   // entspricht 1
@@ -93,7 +93,7 @@ Um die Antwort für ```a % b``` zu erhalten, berechnet der Operator folgende Gle
 
 ```a = (b x ein Multiplikator) + Rest```
 
-Wobei ```ein Multiplikator``` die grösste Zahl ist mit der ```b``` multipliziert werden kann, bei der das Ergebnis immer noch in ```a``` Platz hat.
+Wobei ```ein Multiplikator``` die größte Zahl ist mit der ```b``` multipliziert werden kann, bei der das Ergebnis immer noch in ```a``` Platz hat.
 
 Fügen wir nun ```9``` und ```4``` in die Gleichung ein:
 
@@ -135,7 +135,7 @@ var i = 0
 
 Jedes Mal wenn du ```++i``` aufrufst, wird der Wert von ```i``` um ```1``` erhöht. Grundsätzlich ist ```++i``` eine Abkürzung für ```i = i + 1```. Genauso ist ```--i``` eine Abkürzung für ```i = i - 1```.
 
-Die ```++``` und ```--``` Symbole können als Präfix- oder als Postfix-Operatoren verwendet werden. ```++i```und ```i++``` sind beides gültige Varianten um den Wert von ```i``` um ```1``` zu erhöhen. Genauso sind ```--i``` und ```i--``` beides gültige Varianten um den Wert von ```i``` um ```1``` zu verringern.
+Die ```++``` und ```--``` Symbole können als Präfix- oder als Postfix-Operatoren verwendet werden. ```++i``` und ```i++``` sind beides gültige Varianten um den Wert von ```i``` um ```1``` zu erhöhen. Genauso sind ```--i``` und ```i--``` beides gültige Varianten um den Wert von ```i``` um ```1``` zu verringern.
 
 Beachte, dass diese Operatoren ```i``` verändern und auch einen Wert zurückgeben. Wenn du nur den Wert von ```i``` erhöhen oder verringern möchtest, kannst du den zurückgegebenen Wert ignorieren. Wenn du den Rückgabewert _verwendest_, ist er je nachdem unterschiedlich, ob du die Postfix oder die Präfix Variante verwendest. Dabei gelten folgende Regeln:
 
@@ -154,7 +154,7 @@ let c = a++
 
 Im Beispiel oben wird ```a``` in ```let b = ++a``` inkrementiert, _bevor_ der Wert zurückgegeben wird. Deshalb haben sowohl ```a```, als auch ```b``` den neuen Wert ```1```.
 
-Bei ```let c = a++``` hingegen wird ```a``` _nach_ der Rückgabe des Werts erhöht. Das heisst, ```c``` erhält den alten Wert ```1``` und ```a``` erhält den neuen Wert ```2```.
+Bei ```let c = a++``` hingegen wird ```a``` _nach_ der Rückgabe des Werts erhöht. Das heißt, ```c``` erhält den alten Wert ```1``` und ```a``` erhält den neuen Wert ```2```.
 
 Sofern du das Verhalten von ```i++``` nicht zwingend benötigst, solltest du immer ```++i``` und ```--i``` verwenden. Sie haben das üblicherweise erwartete Verhalten, dass der Wert von ```i``` zuerst verändert und dann zurückgegeben wird.
 
@@ -183,7 +183,7 @@ Obwohl der unäre Plusoperator nichts macht, kann er verwendet werden um die Sym
 
 ## Zusammengesetzte Zuweisungsoperatoren
 
-Wie in C gibt es auch in Swift _zusammengesetzte Zuweisungsoperatoren_, welche die Zuweisung (```=```) mit einer anderen Operation kombinieren. Ein beispiel dafür ist der _Additions-Zuweisungsoperator_ (```+=```):
+Wie in C gibt es auch in Swift _zusammengesetzte Zuweisungsoperatoren_, welche die Zuweisung (```=```) mit einer anderen Operation kombinieren. Ein Beispiel dafür ist der _Additions-Zuweisungsoperator_ (```+=```):
 
 ```Swift
 var a = 1
@@ -201,13 +201,13 @@ Eine Komplette List der zusammengesetzten Zuweisungsoperatoren findest du unter 
 
 ## Vergleichsoperatoren
 
-Swift unterstützt alle standard C Vergleichsoperatoren.
+Swift unterstützt alle Standard C Vergleichsoperatoren.
 
 * Gleich (```a == b```)
 * Nicht gleich (```a != b```)
-* Grösser als (```a > b```)
+* Größer als (```a > b```)
 * Kleiner als (```a < b```)
-* Grösser als oder gleich (```a >= b```)
+* Größer als oder gleich (```a >= b```)
 * Kleiner als oder gleich  (```a <= b```)
 
 >HINWEIS  
@@ -218,9 +218,9 @@ Jeder Vergleichsoperator gibt einen ```Bool``` Wert zurück um anzugeben, ob die
 ```Swift
 1 == 1  // wahr, 1 ist gleich 1
 2 != 1  // wahr, 2 ist nicht gleich 1
-2 > 1   // wahr, 2 ist grösser als 1
+2 > 1   // wahr, 2 ist größer als 1
 1 < 2   // wahr, 1 ist kleiner als 2
-1 >= 1  // wahr, 1 ist grösser als oder gleich 1
+1 >= 1  // wahr, 1 ist größer als oder gleich 1
 2 <= 1  // falsch, 2 ist nicht kleiner als oder gleich 1
 ```
 
@@ -238,9 +238,9 @@ if name == "welt" {
 
 Mehr zur ```if```-Anweisung ist unter [Kontrollfluss](TO BE DEFINED) beschrieben.
 
-## Ternärer Bedinungsoperator
+## Ternärer Bedingungsoperator
 
-Der _ternäre Bedinungsoperator_ ist ein spezieller Operator mit drei Teilen in der Form von ```frage ? antwort1 : antwort2```. Er ist eine Abkürzung um eine von beiden Ausdrücken auszuwerten, je nach dem, ob ```frage``` wahr oder falsch ist. Wenn ```frage``` wahr ist, wird ```antwort1``` ausgewertet, sonst ```antwort2```. Der Wert des Ausdrucks wird anschliessend zurückgegeben.
+Der _ternäre Bedingungsoperator_ ist ein spezieller Operator mit drei Teilen in der Form von ```frage ? antwort1 : antwort2```. Er ist eine Abkürzung um eine von beiden Ausdrücken auszuwerten, je nach dem, ob ```frage``` wahr oder falsch ist. Wenn ```frage``` wahr ist, wird ```antwort1``` ausgewertet, sonst ```antwort2```. Der Wert des Ausdrucks wird anschließend zurückgegeben.
 
 Der ternäre Bedingungsoperator ist eine Abkürzung für untenstehenden Code:
 
@@ -252,7 +252,7 @@ if frage {
 }
 ```
 
-Hier ist ein Beispiel, welches die Höhe für eine Tabellenzeile berechnet. Die Zeilenhöhe soll 50 Punkte höher sein als der Inhalt, wenn die Zeile eine Überschrift enthält. Wenn nicht, soll sie 20 Punkte grösser sein:
+Hier ist ein Beispiel, welches die Höhe für eine Tabellenzeile berechnet. Die Zeilenhöhe soll 50 Punkte höher sein als der Inhalt, wenn die Zeile eine Überschrift enthält. Wenn nicht, soll sie 20 Punkte größer sein:
 
 ```Swift
 let inhaltsHoehe = 40
@@ -277,7 +277,7 @@ if hatUeberschrift {
 
 Dank dem ternären Bedingungsoperator kann ```zeilenHoehe``` mit einer Zeile Code auf den richtigen Wert gesetzt werden. Dies ist kompakter als das zweite Beispiel. Zudem muss ```zeilenHoehe``` nicht als Variable definiert werden, da der Wert nicht mehr in der ```if```-Anweisung verändert wird.
 
-Der ternäre Bedingungsoperator ist eine effiziente Abkürzung um zwischen zwei Ausdrücken zu wählen. Verwende den ternären Bedingungsoperator aber mit Vorsicht. Seine Kompaktheit kann zu schwer lesbarem Code führen, wenn er zu oft eingesetzt wird. Vermeide es, mehrere ternäre Bedinungsoperatoren in einer Zeile zu kombinieren.
+Der ternäre Bedingungsoperator ist eine effiziente Abkürzung um zwischen zwei Ausdrücken zu wählen. Verwende den ternären Bedingungsoperator aber mit Vorsicht. Seine Kompaktheit kann zu schwer lesbarem Code führen, wenn er zu oft eingesetzt wird. Vermeide es, mehrere ternäre Bedingungsoperatoren in einer Zeile zu kombinieren.
 
 ## Nil-Sammeloperator
 
@@ -298,7 +298,7 @@ Im unteren Beispiel wird der Nil-Sammeloperator verwendet um zwischen einer benu
 
 ```Swift
 let standardfarbe = "rot"
-var benutzerdefinierteFarbe: String?    // Standardmässig nil
+var benutzerdefinierteFarbe: String?    // Standardmäßig nil
 
 var benutzterFarbname = benutzerdefinierteFarbe ?? standardfarbe
 // benutzerdefinierteFarbe ist nil, benutzterFarbname hat deshalb den Standardwert "rot"
@@ -320,9 +320,9 @@ Swift beinhaltet zwei _Bereichsoperatoren_ als Kurzschreibweise um einen Wertebe
 
 ### Geschlossener Bereichsoperator
 
-Der _geschlossene Bereichsoperator_ (```a...b```) definiert einen Bereich, der von ```a``` bis ```b``` verläuft und die Werte ```a``` und ```b``` beinhaltet. Der Wert von ```a``` darf nicht grösser sein als der Wert von ```b```.
+Der _geschlossene Bereichsoperator_ (```a...b```) definiert einen Bereich, der von ```a``` bis ```b``` verläuft und die Werte ```a``` und ```b``` beinhaltet. Der Wert von ```a``` darf nicht größer sein als der Wert von ```b```.
 
-Der geschlossene Bereichsoperator ist nützlihc, wenn du über einen Bereich iterieren willst, in dem du alle Werte verwenden möchstest, zum Beispiel in einer ```for```-```in```-Schleife:
+Der geschlossene Bereichsoperator ist nützlich, wenn du über einen Bereich iterieren willst, in dem du alle Werte verwenden möchtest, zum Beispiel in einer ```for```-```in```-Schleife:
 
 ```Swift
 for index in 1...5 {
@@ -339,7 +339,7 @@ Weiteres zur ```for```-```in```-Schleife ist unter [Kontrollfluss](TO BO DEFINED
 
 ### Halb-offener Bereichsoperator
 
-Der _halb-offene Bereichsoperator_ (```a..<b```) definiert einen Bereich der von ```a``` nach ```b``` verläuft, ```b``` aber nicht beinhaltet. Er wird ```halb-offen``` genannt, weil er den ersten Wert beinhaltet, aber nicht den letzten Wert. Wie beim geschlossenen Bereichsoperator darf der Wert von ```a``` nicht grösser sein als der Wert von ```b```. Wenn die Werte von ```a``` und ```b``` gleich sind, ist der resultierende Bereich leer.
+Der _halb-offene Bereichsoperator_ (```a..<b```) definiert einen Bereich der von ```a``` nach ```b``` verläuft, ```b``` aber nicht beinhaltet. Er wird ```halb-offen``` genannt, weil er den ersten Wert beinhaltet, aber nicht den letzten Wert. Wie beim geschlossenen Bereichsoperator darf der Wert von ```a``` nicht größer sein als der Wert von ```b```. Wenn die Werte von ```a``` und ```b``` gleich sind, ist der resultierende Bereich leer.
 
 Halb-offene Bereiche sind besonders nützlich, wenn mit Null-basierten Listen, wie zum Beispiel Arrays, gearbeitet wird. Hier möchte man bis zur Länge der Liste hochzählen:
 
@@ -347,12 +347,12 @@ Halb-offene Bereiche sind besonders nützlich, wenn mit Null-basierten Listen, w
 let namen = ["Anna", "Alex", "Brian", "Jack"]
 let anzahl = namen.count
 for i in 0..<anzahl {
-    print("Person \(i + 1) heisst \(namen[i])")
+    print("Person \(i + 1) heißt \(namen[i])")
 }
-// Person 1 heisst Anna
-// Person 2 heisst Alex
-// Person 3 heisst Brian
-// Person 4 heisst Jack
+// Person 1 heißt Anna
+// Person 2 heißt Alex
+// Person 3 heißt Brian
+// Person 4 heißt Jack
 ```
 
 Beachte, dass das Array vier Elemente beinhaltet, ```0..<anzahl``` zählt aber nur bis 3 (der Index des letzten Elements im Array), da es ein halb-offener Bereich ist. Weiteres zu Arrays findest du unter [Arrays](TO BE DEFINED).
@@ -379,7 +379,7 @@ if !zugriffErlaubt {
 // gibt "ZUGRIFF VERWEIGERT" aus
 ```
 
-Der Ausdruck ```if !zugriffErlaubt``` kann als "wenn nicht Zugriff erlaubt" gelesen werden. Die darauffolgende Zeile wird nur ausgeführt, wenn "nicht Zugriff erlaubt" wahr ist, das heisst, ```zugriffErlaubt``` muss ```false``` sein.
+Der Ausdruck ```if !zugriffErlaubt``` kann als "wenn nicht Zugriff erlaubt" gelesen werden. Die darauffolgende Zeile wird nur ausgeführt, wenn "nicht Zugriff erlaubt" wahr ist, das heißt, ```zugriffErlaubt``` muss ```false``` sein.
 
 Eine bedachte Wahl der Benennung von boolschen Konstanten und Variablen helfen den Code präzise und lesbar zu halten. Es können so zudem doppelte Verneinungen und verwirrende logische Ausdrücke vermieden werden.
 
@@ -405,7 +405,7 @@ if codeEingegeben && retinaScanBestanden {
 
 ### Logischer ODER Operator
 
-Der _logische ODER Operator_ (```a || b```) ist ein infixoperator der aus zwei Pipe-Zeichen besteht. Die verwendest ihn um einen logischen Ausdruck zu erstellen, in welchem nur _eine_ von beiden Werten ```true``` sein muss, damit der gesamte Ausdruck ```true``` wird.
+Der _logische ODER Operator_ (```a || b```) ist ein Infixoperator der aus zwei Pipe-Zeichen besteht. Die verwendest ihn um einen logischen Ausdruck zu erstellen, in welchem nur _eine_ von beiden Werten ```true``` sein muss, damit der gesamte Ausdruck ```true``` wird.
 
 Wie der logische UND Operator weiter oben, verwendet der logische ODER Operator die Kurzschlussauswertung bei der Auswertung des Ausdrucks. Wenn die linke Seite des logischen ODER Operators ```true``` ist, wird die rechte Seite nicht ausgewertet, da der Wert des gesamten Ausdrucks nicht mehr verändert werden kann.
 
