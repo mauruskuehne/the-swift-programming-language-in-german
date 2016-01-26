@@ -18,7 +18,9 @@ Operatoren sind entweder unär, binär oder ternär:
 
 Die von Operatoren betroffenen Werte werden _Operanden_ genannt. Im Ausdruck ```1 + 2``` steht das Symbol ```+``` für einen binären Operator und seine zwei Operanden sind die Werte ```1``` und ```2```.
 
-## Zuweisungsoperator
+## Zuweisungsoperator (Assignment Operator)
+
+<a name="assignment_operator"></a>
 
 Der _Zuweisungsoperator_ (```a = b```) initialisiert oder aktualisiert den Wert von ```a``` mit dem Wert von ```b```:
 
@@ -70,7 +72,9 @@ Der Additionsoperator wird auch für das zusammenhängen von ```String```s verwe
 "Hallo, " + "Welt" // entspricht "Hallo, Welt"
 ```
 
-### Restoperator
+### Restoperator (Remainder Operator)
+
+<a name="remainder_operator"></a>
 
 Der _Restoperator_ (```a % b```) berechnet wie oft ```b``` in ```a``` Platz hat und gibt den übrig gebliebenen Wert zurück (den _Rest_).
 
@@ -181,7 +185,9 @@ let auchMinusSechs = +minusSechs    // auchMinusSechs entspricht -6
 
 Obwohl der unäre Plusoperator nichts macht, kann er verwendet werden um die Symmetrie im Code zu wahren, wenn du mit dem unären Minusoperator für negative Zahlen arbeitest.
 
-## Zusammengesetzte Zuweisungsoperatoren
+## Zusammengesetzte Zuweisungsoperatoren (Compound Assignment Operators)
+
+<a name="compound_assignment_operators"></a>
 
 Wie in C gibt es auch in Swift _zusammengesetzte Zuweisungsoperatoren_, welche die Zuweisung (```=```) mit einer anderen Operation kombinieren. Ein Beispiel dafür ist der _Additions-Zuweisungsoperator_ (```+=```):
 
@@ -238,7 +244,9 @@ if name == "welt" {
 
 Mehr zur ```if```-Anweisung ist unter [Kontrollfluss](./05_control_flow.md) beschrieben.
 
-## Ternärer Bedingungsoperator
+## Ternärer Bedingungsoperator (Ternary Conditional Operator)
+
+<a name="ternary_conditional_operator"></a>
 
 Der _ternäre Bedingungsoperator_ ist ein spezieller Operator mit drei Teilen in der Form von ```frage ? antwort1 : antwort2```. Er ist eine Abkürzung um eine von beiden Ausdrücken auszuwerten, je nach dem, ob ```frage``` wahr oder falsch ist. Wenn ```frage``` wahr ist, wird ```antwort1``` ausgewertet, sonst ```antwort2```. Der Wert des Ausdrucks wird anschließend zurückgegeben.
 
@@ -279,7 +287,9 @@ Dank dem ternären Bedingungsoperator kann ```zeilenHoehe``` mit einer Zeile Cod
 
 Der ternäre Bedingungsoperator ist eine effiziente Abkürzung um zwischen zwei Ausdrücken zu wählen. Verwende den ternären Bedingungsoperator aber mit Vorsicht. Seine Kompaktheit kann zu schwer lesbarem Code führen, wenn er zu oft eingesetzt wird. Vermeide es, mehrere ternäre Bedingungsoperatoren in einer Zeile zu kombinieren.
 
-## Nil-Sammeloperator
+## Nil-Sammeloperator (Nil Coalescing Operator)
+
+<a name="nil_coalescing_operator"></a>
 
 Der _Nil-Sammeloperator_ (```a ?? b```) liest aus dem optionalen ```a``` den Wert aus. Wenn kein Wert vorhanden ist (```a``` ist ```nil```), wird der Wert von ```b``` zurückgegeben. Der Ausdruck ```b``` muss vom gleichen Typ sein wie der Wert, der in ```a``` gespeichert ist.
 
