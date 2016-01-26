@@ -2,11 +2,11 @@
 
 Ein Operator ist ein spezielles Zeichen oder Phrase, mit welchem du Werte prüfen, verändern oder kombinieren kannst. Der Additionsoperator (```+```) beispielsweise zählt zwei Zahlen zusammen (wie in ```let i = 1 + 2```). Ein komplexeres Beispiel wäre der logische AND Operator ```&&``` (wie in ```if zahlenCodeEingegeben && retinaScanErfolgreich```) oder dem Inkrementoperator ```++i```, welcher eine Abkürzung für die Addition von ```1``` zu ```i``` ist.
 
-Swift unterstützt die meisten Standard C-Operatoren und verbessert einige Möglichkeiten um häufige Programmierfehler zu verhindern. Der Zuweisungsoperator (```=```) gibt keinen Wert zurück, so wird er nicht aus Versehen anstelle des Vergleichsoperators (```==```) verwendet. Arithmetische Operatoren (```+```, ```-```, ```*```, ```/```, ```%``` usw.) ermitteln und verhindern Wertüberläufe. So treten keine unerwarteten Resultate auf, wenn mit Zahlen gearbeitet wird, welche größer oder kleiner werden als der Wertebereich des Typs, in dem sie gespeichert sind. Du kannst Wertüberläufe explizit erlauben, indem du die [Wertüberlauf-Operatoren](TO BE DEFINED) von Swift verwendest.
+Swift unterstützt die meisten Standard C-Operatoren und verbessert einige Möglichkeiten um häufige Programmierfehler zu verhindern. Der Zuweisungsoperator (```=```) gibt keinen Wert zurück, so wird er nicht aus Versehen anstelle des Vergleichsoperators (```==```) verwendet. Arithmetische Operatoren (```+```, ```-```, ```*```, ```/```, ```%``` usw.) ermitteln und verhindern Wertüberläufe. So treten keine unerwarteten Resultate auf, wenn mit Zahlen gearbeitet wird, welche größer oder kleiner werden als der Wertebereich des Typs, in dem sie gespeichert sind. Du kannst Wertüberläufe explizit erlauben, indem du die [Wertüberlauf-Operatoren](./25_advanced_options.md) von Swift verwendest.
 
 Im Gegensatz zu C kannst du Resteberechnungen (```%```) von Gleitkommazahlen durchführen. Swift bietet zudem zwei in C nicht vorhandene Bereichsoperatoren (```a..<b``` und ```a...b```) zur Abbildung von Wertebereichen.
 
-Dieses Kapitel beschreibt die üblichen Operatoren in Swift. Im Kapitel [Weitergehende Operatoren](TO BE DEFINED) sind Swifts weitergehende Operatoren, das Implementieren eigener Operatoren und das Definieren von Standardoperatoren für eigene Typen beschrieben.
+Dieses Kapitel beschreibt die üblichen Operatoren in Swift. Im Kapitel [Weitergehende Operatoren](./25_advanced_options.md) sind Swifts weitergehende Operatoren, das Implementieren eigener Operatoren und das Definieren von Standardoperatoren für eigene Typen beschrieben.
 
 ## Terminologie
 
@@ -62,7 +62,7 @@ Swift unterstützt die vier _arithmetischen Standardoperatoren_ für alle Zahlen
 10.0 / 2.5  // entspricht 4.0
 ```
 
-Im Gegensatz zu C und Objective-C erlauben die arithmetischen Operatoren standardmäßig kein Überlauf der Werte. Wenn du dieses Verhalten benötigst, kannst du Swifts Überlaufoperatoren verwenden (wie zum Beispiel ```a &+ b```). Siehe dazu [Überlaufoperatoren](TO BE DEFINED).
+Im Gegensatz zu C und Objective-C erlauben die arithmetischen Operatoren standardmäßig kein Überlauf der Werte. Wenn du dieses Verhalten benötigst, kannst du Swifts Überlaufoperatoren verwenden (wie zum Beispiel ```a &+ b```). Siehe dazu [Überlaufoperatoren](./25_advanced_options.md).
 
 Der Additionsoperator wird auch für das zusammenhängen von ```String```s verwendet:
 
@@ -197,7 +197,7 @@ Der Ausdruck ```a += 2``` ist eine Abkürzung für ```a = a + 2```. Die Addition
 Die zusammengesetzten Zuweisungsoperatoren haben keinen Rückgabewert. Du kannst deshalb ```let b = a += 2``` nicht verwenden.
 Dieses Verhalten ist anders als bei den oben erwähnten Inkrement- und Dekrement-Operatoren.
 
-Eine Komplette List der zusammengesetzten Zuweisungsoperatoren findest du unter [Ausdrücke](TO BE DEFINED).
+Eine Komplette List der zusammengesetzten Zuweisungsoperatoren findest du unter [Ausdrücke](../chapter3_language_reference/04_expressions.md).
 
 ## Vergleichsoperatoren
 
@@ -211,7 +211,7 @@ Swift unterstützt alle Standard C Vergleichsoperatoren.
 * Kleiner als oder gleich  (```a <= b```)
 
 >HINWEIS  
-Swift bietet auch zwei _Identitätsoperatoren_ (```===``` und ```!==```), welche prüfen, ob zwei Objektreferenzen auf die gleiche Objektinstanz verweisen. Mehr Informationen findest du unter [Klassen und Strukturen](TO BE DEFINED).
+Swift bietet auch zwei _Identitätsoperatoren_ (```===``` und ```!==```), welche prüfen, ob zwei Objektreferenzen auf die gleiche Objektinstanz verweisen. Mehr Informationen findest du unter [Klassen und Strukturen](./09_classes_and_structures.md).
 
 Jeder Vergleichsoperator gibt einen ```Bool``` Wert zurück um anzugeben, ob die Anweisung wahr ist:
 
@@ -236,7 +236,7 @@ if name == "welt" {
 // Gibt "Hallo, Welt" aus, da name gleich ist wie "welt"
 ```
 
-Mehr zur ```if```-Anweisung ist unter [Kontrollfluss](TO BE DEFINED) beschrieben.
+Mehr zur ```if```-Anweisung ist unter [Kontrollfluss](./05_control_flow.md) beschrieben.
 
 ## Ternärer Bedingungsoperator
 
@@ -355,7 +355,7 @@ for i in 0..<anzahl {
 // Person 4 heißt Jack
 ```
 
-Beachte, dass das Array vier Elemente beinhaltet, ```0..<anzahl``` zählt aber nur bis 3 (der Index des letzten Elements im Array), da es ein halb-offener Bereich ist. Weiteres zu Arrays findest du unter [Arrays](TO BE DEFINED).
+Beachte, dass das Array vier Elemente beinhaltet, ```0..<anzahl``` zählt aber nur bis 3 (der Index des letzten Elements im Array), da es ein halb-offener Bereich ist. Weiteres zu Arrays findest du unter [Arrays](./04_collection_types.md).
 
 ## Logische Operatoren
 
