@@ -79,7 +79,7 @@ Der Restoperator (```%```) ist in anderen Sprachen als _Modulo-Operator_ bekannt
 
 Schauen wir uns an, wie der Restoperator funktioniert. Um ```9 % 4``` zu berechnen, müssen wir zuerst herausfinden, wie oft ```4``` in ```9``` Platz hat:
 
-<img src="TO BE DEFINED/> 
+![Grafische Darstellung, wie oft 4 in 9 Platz hat.](../../images/remainderInteger_2x.png)
 
 ```4``` hat zwei Mal Platz in ```9```, der Rest beträgt ```1``` (in Orange dargestellt).
 
@@ -122,7 +122,7 @@ Anders als in C und Objective-C, kann der Restoperator auch mit Gleitkommazahlen
 
 In diesem Beispiel wird ```8``` durch ```2.5``` geteilt. Dies ergibt ```3``` mit einem Rest von ```0.5```. Der Restoperator gibt somit einen ```Double``` Wert von ```0.5``` zurück.
 
-<img src="TO BE DEFINED" />
+![Grafische Darstellung, wie oft 2.5 in 8 Platz hat.](../../images/remainderInteger_2x.png)
 
 ### Inkrement- und Dekrementoperatoren
 
