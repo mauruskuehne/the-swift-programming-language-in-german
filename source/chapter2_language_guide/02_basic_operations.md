@@ -279,33 +279,182 @@ Dank dem ternären Bedingungsoperator kann ```zeilenHoehe``` mit einer Zeile Cod
 
 Der ternäre Bedingungsoperator ist eine effiziente Abkürzung um zwischen zwei Ausdrücken zu wählen. Verwende den ternären Bedingungsoperator aber mit Vorsicht. Seine Kompaktheit kann zu schwer lesbarem Code führen, wenn er zu oft eingesetzt wird. Vermeide es, mehrere ternäre Bedinungsoperatoren in einer Zeile zu kombinieren.
 
-a
+## Nil-Sammeloperator
 
-a
-a
+Der _Nil-Sammeloperator_ (```a ?? b```) liest aus dem optionalen ```a``` den Wert aus. Wenn kein Wert vorhanden ist (```a``` ist ```nil```), wird der Wert von ```b``` zurückgegeben. Der Ausdruck ```b``` muss vom gleichen Typ sein wie der Wert, der in ```a``` gespeichert ist.
 
-a
-a
+Der Nil-Sammeloperator ist die Kurzschreibweise für folgenden Code:
 
-a
-a
+```Swift
+a != nil ? a! : b
+```
 
-a
-a
+Der Code oben verwendet den ternären Bedingungsoperator und erzwungenes Auspacken (```a!```) um auf den Wert von ```a``` zuzugreifen, wenn ```a``` nicht ```nil``` ist, sonst wird ```b``` zurückgegeben. Der Nil-Sammeloperator bietet eine elegante Form für diese bedingte Prüfung und das Auspacken des Wertes.
 
-a
-a
+>HINWEIS
+Wenn der Wert von ```a``` nicht ```nil``` ist, wird ```b``` nicht evaluiert. Dieses Verhalten wird _Kurzschlussauswertung_ genannt. 
 
-a
-a
+Im unteren Beispiel wird der Nil-Sammeloperator verwendet um zwischen einer benutzerdefinierten Farbe und einer Standardfarbe zu wählen:
 
-a
-a
+```Swift
+let standardfarbe = "rot"
+var benutzerdefinierteFarbe: String?    // Standardmässig nil
 
-a
+var benutzterFarbname = benutzerdefinierteFarbe ?? standardfarbe
+// benutzerdefinierteFarbe ist nil, benutzterFarbname hat deshalb den Standardwert "rot"
+```
 
-a
+Die Variable ```benutzerdefinierteFarbe``` ist als optionaler ```String``` mit einem Standardwert von ```nil``` definiert. Weil ```benutzerdefinierteFarbe``` einen optionalen Typ hat, kannst du den Nil-Sammeloperator beim Zugriff auf den Wert verwenden. Im Beispiel oben wird der Operator für die Ermittlung eines Standardwertes für die ```String```-Variable namens ```benutzterFarbname``` verwendet. Da ```benutzerdefinierteFarbe``` ```nil``` ist, gibt der Ausdruck ```benutzerdefinierteFarbe ?? standardfarbe``` den Wert von ```standardfarbe``` zurück, ```"rot"```.
 
-a
+Wenn du einen nicht-```nil``` Wert der Variable ```benutzerdefinierteFarbe``` zuweist und den Nil-Sammeloperator nochmals ausführst, wird stattdessen der Wert in der Variable ```benutzerdefinierteFarbe``` verwendet:
 
-adsf
+```Swift
+benutzerdefinierteFarbe = "grün"
+benutzterFarbname ? benutzerdefinierteFarbe ?? standardfarbe
+// benutzerdefinierteFarbe ist nicht nil, benutzterFarbname wird auf "grün" gesetzt.
+```
+
+## Bereichsoperatoren
+
+Swift beinhaltet zwei _Bereichsoperatoren_ als Kurzschreibweise um einen Wertebereich auszudrücken.
+
+### Geschlossener Bereichsoperator
+
+Der _geschlossene Bereichsoperator_ (```a...b```) definiert einen Bereich, der von ```a``` bis ```b``` verläuft und die Werte ```a``` und ```b``` beinhaltet. Der Wert von ```a``` darf nicht grösser sein als der Wert von ```b```.
+
+Der geschlossene Bereichsoperator ist nützlihc, wenn du über einen Bereich iterieren willst, in dem du alle Werte verwenden möchstest, zum Beispiel in einer ```for```-```in```-Schleife:
+
+```Swift
+for index in 1...5 {
+    print("\(index) mal 5 ist \(index * 5)")
+}
+// 1 mal 5 ist 5
+// 2 mal 5 ist 10
+// 3 mal 5 ist 15
+// 4 mal 5 ist 20
+// 5 mal 5 ist 25
+```
+
+Weiteres zur ```for```-```in```-Schleife ist unter [Kontrollfluss](TO BO DEFINED) beschrieben.
+
+### Halb-offener Bereichsoperator
+
+Der _halb-offene Bereichsoperator_ (```a..<b```) definiert einen Bereich der von ```a``` nach ```b``` verläuft, ```b``` aber nicht beinhaltet. Er wird ```halb-offen``` genannt, weil er den ersten Wert beinhaltet, aber nicht den letzten Wert. Wie beim geschlossenen Bereichsoperator darf der Wert von ```a``` nicht grösser sein als der Wert von ```b```. Wenn die Werte von ```a``` und ```b``` gleich sind, ist der resultierende Bereich leer.
+
+Halb-offene Bereiche sind besonders nützlich, wenn mit Null-basierten Listen, wie zum Beispiel Arrays, gearbeitet wird. Hier möchte man bis zur Länge der Liste hochzählen:
+
+```Swift
+let namen = ["Anna", "Alex", "Brian", "Jack"]
+let anzahl = namen.count
+for i in 0..<anzahl {
+    print("Person \(i + 1) heisst \(namen[i])")
+}
+// Person 1 heisst Anna
+// Person 2 heisst Alex
+// Person 3 heisst Brian
+// Person 4 heisst Jack
+```
+
+Beachte, dass das Array vier Elemente beinhaltet, ```0..<anzahl``` zählt aber nur bis 3 (der Index des letzten Elements im Array), da es ein halb-offener Bereich ist. Weiteres zu Arrays findest du unter [Arrays](TO BE DEFINED).
+
+## Logische Operatoren
+
+_Logische Operatoren_ modifizieren oder kombinieren die logischen boolschen Werte ```true``` und ```false```. Swift unterstützt die in C-basierten Sprachen üblichen logischen Operatoren:
+
+* Logisches NICHT (```!a```)
+* Logisches UND (```a && b```)
+* Logisches ODER (```a || b```)
+
+### Logischer NICHT Operator
+
+Der _logische NICHT Operator_ (```!a```) invertiert einen boolschen Wert. ```true``` wird so zu ```false``` und ```false``` wird zu ```true```.
+
+Der logische NICHT Operator ist ein Präfixoperator und erscheint direkt vor dem Wert auf den er angewendet wird, ohne Leerzeichen dazwischen. Er wird, wie in folgendem Beispiel, als "nicht ```a```" gelesen:
+
+```Swift
+let zugriffErlaubt = false
+if !zugriffErlaubt {
+    print("ZUGRIFF VERWEIGERT")
+}
+// gibt "ZUGRIFF VERWEIGERT" aus
+```
+
+Der Ausdruck ```if !zugriffErlaubt``` kann als "wenn nicht Zugriff erlaubt" gelesen werden. Die darauffolgende Zeile wird nur ausgeführt, wenn "nicht Zugriff erlaubt" wahr ist, das heisst, ```zugriffErlaubt``` muss ```false``` sein.
+
+Eine bedachte Wahl der Benennung von boolschen Konstanten und Variablen helfen den Code präzise und lesbar zu halten. Es können so zudem doppelte Verneinungen und verwirrende logische Ausdrücke vermieden werden.
+
+### Logischer UND Operator
+
+Der _logische UND Operator_ (```a && b```) ist einen logischen Ausdruck in welchem beide Werte ```true``` sein müssen, damit auch der gesamte Ausdruck ```true``` ist.
+
+Wenn einer von beiden Werten ```false``` ist, wird der gesamte Ausdruck ```false```. Genaugenommen, wenn der _erste_ Wert ```false``` ist, wird der zweite Wert gar nicht erst ausgewertet. Es ist dann gar nicht mehr möglich, dass der gesamte Ausdruck ```true``` wird. Dies wird auch _Kurzschlussauswertung_ genannt.
+
+Dieses Beispiel beachtet zwei ```Bool```-Werte und erlaubt den Zugriff nur, wenn beide Werte ```true``` sind:
+
+```Swift
+let codeEingegeben = true
+let retinaScanBestanden = false
+
+if codeEingegeben && retinaScanBestanden {
+    print("Willkommen!")
+} else {
+    print("ZUGRIFF VERWEIGERT")
+}
+// gibt "ZUGRIFF VERWEIGET" aus
+```
+
+### Logischer ODER Operator
+
+Der _logische ODER Operator_ (```a || b```) ist ein infixoperator der aus zwei Pipe-Zeichen besteht. Die verwendest ihn um einen logischen Ausdruck zu erstellen, in welchem nur _eine_ von beiden Werten ```true``` sein muss, damit der gesamte Ausdruck ```true``` wird.
+
+Wie der logische UND Operator weiter oben, verwendet der logische ODER Operator die Kurzschlussauswertung bei der Auswertung des Ausdrucks. Wenn die linke Seite des logischen ODER Operators ```true``` ist, wird die rechte Seite nicht ausgewertet, da der Wert des gesamten Ausdrucks nicht mehr verändert werden kann.
+
+Im Beispiel unten ist der erste ```Bool```-Wert (```hatTuerSchluessel```) aber der zweite Wert (```kenntOverridePasswort```) ist ```true```. Da ein Wert ```true``` ist, wird der gesamte Ausdruck zu ```true``` evaluiert:
+
+```Swift
+let hatTuerSchluessel = false
+let kenntOverridePasswort = true
+if hatTuerSchluessel || kenntOverridePasswort {
+    print("Willkommen!")
+} else {
+    print("ZUGRIFF VERWEIGERN")
+}
+// gibt "Willkommen!" aus
+```
+
+### Verknüpfen logischer Operatoren
+
+Du kannst mehrere logische Operatoren verknüpfen um zusammengesetzte Ausdrücke zu erstellen:
+
+```Swift
+if codeEingegeben && retinaScanBestanden || hatTuerSchluessel || kenntOverridePasswort {
+    print("Willkommen!")
+} else {
+    print("ZUGRIFF VERWEIGEN")
+}
+// gibt "Willkommen!" aus
+```
+
+Dieses Beispiel verwendet mehrere ```&&``` und ```||``` Operatoren um einen längeren, zusammengesetzten Ausdruck zu erstellen. Die ```&&``` und ```||``` Operatoren arbeiten aber immer noch nur mit zwei Werten. Es sind also eigentlich drei kleinere Ausdrücke die aneinandergehängt wurden. Das Beispiel kann wie folgt gelesen werden:
+
+Wenn wir den korrekten Code eingegeben haben und den Retinascan bestanden haben oder einen gültigen Türschlüssel haben oder wir das Override-Passwort haben, dann haben wir Zugriff.
+
+Basierend auf den Werten von ```codeEingegeben```, ```retinaScanBestanden``` und ```hatTuerSchluessel``` sind die ersten beiden Unterausdrücke ```false```. Wenn aber das Override-Passwort bekannt ist evaluiert dennoch der gesamte Ausdruck zu ```true```.
+
+>HINWEIS
+Die logischen Operatoren ```&&``` und ```||``` in Swift sind links-assoziativ. Zusammengesetzte Ausdrücke mit mehreren logischen Operatoren evaluieren deshalb zuerst den Unterausdruck ganz links.
+
+### Explizite Klammern
+
+Manchmal ist es nützlich Klammen zu setzen auch wenn sie nicht unbgedingt benötigt werden. Die Bedeutung von komplexen Ausdrücken wird so einfacher lesbar. Im Türenbespiel oben macht es Sinn, Klammern um den ersten Unterausdruck des zusammengesetzten Ausdrucks zu machen. Der Sinn des Ausdrucks wird so explizit sichtbar:
+
+```Swift
+if (codeEingegeben && retinaScanBestanden) || hatTuerSchluessel || kenntOverridePasswort {
+    print("Willkommen!")
+} else {
+    print("ZUGRIFF VERWEIGERT")
+}
+// gibt "Willkommen!" aus
+```
+
+Die Klammern machen klar, dass die ersten beiden Werte ein Teil der Gesamtlogik sind. Das Resultat des zusammengesetzten Ausdrucks verändert sich nicht, die Absicht hinter dem Ausdruck ist aber klarer für den Leser. Lesbarkeit sollte der Kürze des Codes immer vorgezogen werden. Verwende deshalb Klammern wo nötig, um deine Absichten klar auszudrücken.
